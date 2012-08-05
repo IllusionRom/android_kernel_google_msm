@@ -333,7 +333,7 @@ LD		= $(CROSS_COMPILE)ld
 LDFINAL	= $(LD)
 REAL_CC		= $(CROSS_COMPILE)gcc
 CPP		= $(CC) -E
-ifdef CONFIG_LTO_SLIM
+ifdef CONFIG_LTO
 AR		= $(CROSS_COMPILE)gcc-ar
 else
 AR		= $(CROSS_COMPILE)ar

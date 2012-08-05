@@ -955,8 +955,9 @@ config CC_OPTIMIZE_ALOT
 endchoice
 
 config LTO_MENU
-	bool "Enable gcc link time optimizations"
-	depends on EXPERIMENTAL
+	bool "Enable gcc link time optimization (LTO)"
+	# Only tested on X86 for now. For other architectures you likely
+	# have to fix some things first, like adding asmlinkages etc.
 	# lto does not support excluding flags for specific files
 	# right now. Can be removed if that is fixed.
 	depends on !FUNCTION_TRACER
@@ -964,32 +965,39 @@ config LTO_MENU
 	  With this option gcc will do whole program optimizations for
 	  the whole kernel and module. This increases compile time, but can
 	  lead to better code. It allows gcc to inline functions between
-          different files. It might also trigger bugs due to more
-	  aggressive optimization. It allows gcc to drop unused code.
-          With this option gcc will also do some global checking over
-          different source files.
+	  different files and do other optimization.  It might also trigger
+	  bugs due to more aggressive optimization. It allows gcc to drop unused
+	  code. On smaller monolithic kernel configurations
+	  it usually leads to smaller kernels, especially when modules
+	  are disabled.
 
-	  This requires a gcc 4.7 or later compiler and
-          Linux binutils 2.21.51.0.3 or later.  It does not currently
-          work with a FSF release of binutils or with gold.
+	  With this option gcc will also do some global checking over
+	  different source files. It also disables a number of kernel
+	  features.
 
-          On larger configurations this may need more than 4GB of RAM.
-          It will likely not work on those with a 32bit compiler. Also
-          /tmp in tmpfs may lead to faster running out of RAM
-          (in this case set the TMPDIR environment variable to a different
-          directly on disk)
+	  This option is recommended for release builds. With LTO
+	  the kernel always has to be re-optimized (but not re-parsed)
+	  on each build.
 
-	  When the toolchain support is not available this will
+	  This requires a gcc 4.8 or later compiler and
+	  Linux binutils 2.21.51.0.3 or later.  gcc 4.9 builds significantly
+	  faster than 4.8 It does not currently work with a FSF release of
+	  binutils or with the gold linker.
+
+	  On larger configurations this may need more than 4GB of RAM.
+	  It will likely not work on those with a 32bit compiler.
+
+	  When the toolchain support is not available this will (hopefully)
 	  be automatically disabled.
 
-          For more information see Documentation/lto-build
+	  For more information see Documentation/lto-build
 
 config LTO_DISABLE
          bool "Disable LTO again"
          depends on LTO_MENU
          default n
          help
-           This option is merely here so that allyesconfig or allmodconfig does
+           This option is merely here so that allyesconfig or allmodconfig do
            not enable LTO. If you want to actually use LTO do not enable.
 
 config LTO
@@ -1000,13 +1008,21 @@ config LTO
 config LTO_DEBUG
 	bool "Enable LTO compile time debugging"
 	depends on LTO
+	help
+	  Enable LTO debugging in the compiler. The compiler dumps
+	  some log files that make it easier to figure out LTO
+	  behavior. The log files also allow to reconstruct
+	  the global inlining and a global callgraph.
+	  They however add some (single threaded) cost to the
+	  compilation.  When in doubt do not enable.
 
-config LTO_SLIM
-	bool "Use slim lto"
+config LTO_CP_CLONE
+	bool "Allow aggressive cloning for function specialization"
 	depends on LTO
 	help
-          Requires recent Linux binutils and an AR=... wrapper that sets
-	  the linker plugin.
+	  Allow the compiler to clone and specialize functions for specific
+	  arguments when it determines these arguments are very commonly
+	  called.  Experimential. Will increase text size.
 
 config SYSCTL
 	bool
