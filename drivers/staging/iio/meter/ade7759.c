@@ -250,7 +250,7 @@ static ssize_t ade7759_write_reset(struct device *dev,
 static IIO_DEV_ATTR_AENERGY(ade7759_read_40bit, ADE7759_AENERGY);
 static IIO_DEV_ATTR_CFDEN(S_IWUSR | S_IRUGO,
 		ade7759_read_16bit,
-		ade7759_write_16bit,
+		ade7759_writeO16bit,
 		ADE7759_CFDEN);
 static IIO_DEV_ATTR_CFNUM(S_IWUSR | S_IRUGO,
 		ade7759_read_8bit,
