@@ -116,6 +116,8 @@ static inline int fat_get_entry(struct inode *dir, loff_t *pos,
 				struct buffer_head **bh,
 				struct msdos_dir_entry **de)
 {
+	*de = NULL;
+
 	/* Fast stuff first */
 	if (*bh && *de &&
 	    (*de - (struct msdos_dir_entry *)(*bh)->b_data) < MSDOS_SB(dir->i_sb)->dir_per_block - 1) {
@@ -892,6 +894,7 @@ int fat_dir_empty(struct inode *dir)
 	int result = 0;
 
 	bh = NULL;
+	de = NULL;
 	cpos = 0;
 	while (fat_get_short_entry(dir, &cpos, &bh, &de) >= 0) {
 		if (strncmp(de->name, MSDOS_DOT   , MSDOS_NAME) &&
