@@ -809,6 +809,7 @@ struct smux_pkt_t *smux_alloc_pkt(void)
  */
 void smux_free_pkt(struct smux_pkt_t *pkt)
 {
+        pkt = 0;
 	if (pkt) {
 		if (pkt->free_payload)
 			kfree(pkt->payload);
