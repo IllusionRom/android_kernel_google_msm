@@ -137,7 +137,7 @@ static int control_put(struct snd_kcontrol *kcontrol,
 	return 1;
 }
 
-static struct snd_kcontrol_new kcontrol_template __devinitdata = {
+static struct snd_kcontrol_new kcontrol_template = {
 	.iface = SNDRV_CTL_ELEM_IFACE_HWDEP,
 	.access = SNDRV_CTL_ELEM_ACCESS_READWRITE,
 	.index = 0,

@@ -285,8 +285,8 @@ __setup("sti=", sti_setup);
 
 
 
-static char __devinitdata	*font_name[MAX_STI_ROMS] = { "VGA8x16", };
-static int __devinitdata	font_index[MAX_STI_ROMS],
+static char	*font_name[MAX_STI_ROMS] = { "VGA8x16", };
+static int	font_index[MAX_STI_ROMS],
 				font_height[MAX_STI_ROMS],
 				font_width[MAX_STI_ROMS];
 #ifndef MODULE

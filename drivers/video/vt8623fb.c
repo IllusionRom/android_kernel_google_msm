@@ -906,7 +906,7 @@ fail:
 
 /* List of boards that we are trying to support */
 
-static struct pci_device_id vt8623_devices[] __devinitdata = {
+static struct pci_device_id vt8623_devices[] = {
 	{PCI_DEVICE(PCI_VENDOR_ID_VIA, 0x3122)},
 	{0, 0, 0, 0, 0, 0, 0}
 };

@@ -91,7 +91,7 @@ static struct panel_info panel_table[] = {
 #define DPY_W 800
 #define DPY_H 600
 
-static struct fb_fix_screeninfo broadsheetfb_fix __devinitdata = {
+static struct fb_fix_screeninfo broadsheetfb_fix = {
 	.id =		"broadsheetfb",
 	.type =		FB_TYPE_PACKED_PIXELS,
 	.visual =	FB_VISUAL_STATIC_PSEUDOCOLOR,
@@ -102,7 +102,7 @@ static struct fb_fix_screeninfo broadsheetfb_fix __devinitdata = {
 	.accel =	FB_ACCEL_NONE,
 };
 
-static struct fb_var_screeninfo broadsheetfb_var __devinitdata = {
+static struct fb_var_screeninfo broadsheetfb_var = {
 	.xres		= DPY_W,
 	.yres		= DPY_H,
 	.xres_virtual	= DPY_W,

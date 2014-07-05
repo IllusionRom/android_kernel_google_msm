@@ -207,7 +207,7 @@ enum uli526x_CR6_bits {
 };
 
 /* Global variable declaration ----------------------------- */
-static int __devinitdata printed_version;
+static int printed_version;
 static const char version[] __devinitconst =
 	"ULi M5261/M5263 net driver, version " DRV_VERSION " (" DRV_RELDATE ")";
 

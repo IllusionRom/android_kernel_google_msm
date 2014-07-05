@@ -214,7 +214,7 @@ struct pci_mmap_map {
 	unsigned long prot_mask;
 };
 
-static struct fb_fix_screeninfo atyfb_fix __devinitdata = {
+static struct fb_fix_screeninfo atyfb_fix = {
 	.id		= "ATY Mach64",
 	.type		= FB_TYPE_PACKED_PIXELS,
 	.visual		= FB_VISUAL_PSEUDOCOLOR,
@@ -309,18 +309,18 @@ static int vram;
 static int pll;
 static int mclk;
 static int xclk;
-static int comp_sync __devinitdata = -1;
+static int comp_sync = -1;
 static char *mode;
 
 #ifdef CONFIG_PMAC_BACKLIGHT
-static int backlight __devinitdata = 1;
+static int backlight = 1;
 #else
-static int backlight __devinitdata = 0;
+static int backlight = 0;
 #endif
 
 #ifdef CONFIG_PPC
-static int default_vmode __devinitdata = VMODE_CHOOSE;
-static int default_cmode __devinitdata = CMODE_CHOOSE;
+static int default_vmode = VMODE_CHOOSE;
+static int default_cmode = CMODE_CHOOSE;
 
 module_param_named(vmode, default_vmode, int, 0);
 MODULE_PARM_DESC(vmode, "int: video mode for mac");
@@ -329,10 +329,10 @@ MODULE_PARM_DESC(cmode, "int: color mode for mac");
 #endif
 
 #ifdef CONFIG_ATARI
-static unsigned int mach64_count __devinitdata = 0;
-static unsigned long phys_vmembase[FB_MAX] __devinitdata = { 0, };
-static unsigned long phys_size[FB_MAX] __devinitdata = { 0, };
-static unsigned long phys_guiregbase[FB_MAX] __devinitdata = { 0, };
+static unsigned int mach64_count = 0;
+static unsigned long phys_vmembase[FB_MAX] = { 0, };
+static unsigned long phys_size[FB_MAX] = { 0, };
+static unsigned long phys_guiregbase[FB_MAX] = { 0, };
 #endif
 
 /* top -> down is an evolution of mach64 chipset, any corrections? */
@@ -371,7 +371,7 @@ static struct {
 	const char *name;
 	int pll, mclk, xclk, ecp_max;
 	u32 features;
-} aty_chips[] __devinitdata = {
+} aty_chips[] = {
 #ifdef CONFIG_FB_ATY_GX
 	/* Mach64 GX */
 	{ PCI_CHIP_MACH64GX, "ATI888GX00 (Mach64 GX)", 135, 50, 50, 0, ATI_CHIP_88800GX },
@@ -531,34 +531,34 @@ static int __devinit correct_chipset(struct atyfb_par *par)
 	return 0;
 }
 
-static char ram_dram[] __devinitdata = "DRAM";
-static char ram_resv[] __devinitdata = "RESV";
+static char ram_dram[] = "DRAM";
+static char ram_resv[] = "RESV";
 #ifdef CONFIG_FB_ATY_GX
-static char ram_vram[] __devinitdata = "VRAM";
+static char ram_vram[] = "VRAM";
 #endif /* CONFIG_FB_ATY_GX */
 #ifdef CONFIG_FB_ATY_CT
-static char ram_edo[] __devinitdata = "EDO";
-static char ram_sdram[] __devinitdata = "SDRAM (1:1)";
-static char ram_sgram[] __devinitdata = "SGRAM (1:1)";
-static char ram_sdram32[] __devinitdata = "SDRAM (2:1) (32-bit)";
-static char ram_wram[] __devinitdata = "WRAM";
-static char ram_off[] __devinitdata = "OFF";
+static char ram_edo[] = "EDO";
+static char ram_sdram[] = "SDRAM (1:1)";
+static char ram_sgram[] = "SGRAM (1:1)";
+static char ram_sdram32[] = "SDRAM (2:1) (32-bit)";
+static char ram_wram[] = "WRAM";
+static char ram_off[] = "OFF";
 #endif /* CONFIG_FB_ATY_CT */
 
 
 #ifdef CONFIG_FB_ATY_GX
-static char *aty_gx_ram[8] __devinitdata = {
+static char *aty_gx_ram[8] = {
 	ram_dram, ram_vram, ram_vram, ram_dram,
 	ram_dram, ram_vram, ram_vram, ram_resv
 };
 #endif /* CONFIG_FB_ATY_GX */
 
 #ifdef CONFIG_FB_ATY_CT
-static char *aty_ct_ram[8] __devinitdata = {
+static char *aty_ct_ram[8] = {
 	ram_off, ram_dram, ram_edo, ram_edo,
 	ram_sdram, ram_sgram, ram_wram, ram_resv
 };
-static char *aty_xl_ram[8] __devinitdata = {
+static char *aty_xl_ram[8] = {
 	ram_off, ram_dram, ram_edo, ram_edo,
 	ram_sdram, ram_sgram, ram_sdram32, ram_resv
 };

@@ -2305,7 +2305,7 @@ static void __devinit dc390_eeprom_override(u8 index)
 	}
 }
 
-static int __devinitdata tmscsim_def[] = {
+static int tmscsim_def[] = {
 	7,
 	0 /* 10MHz */,
 	PARITY_CHK_ | SEND_START_ | EN_DISCONNECT_ | SYNC_NEGO_ | TAG_QUEUEING_,

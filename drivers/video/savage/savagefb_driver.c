@@ -69,7 +69,7 @@
 /* --------------------------------------------------------------------- */
 
 
-static char *mode_option __devinitdata = NULL;
+static char *mode_option = NULL;
 
 #ifdef MODULE
 
@@ -1664,7 +1664,7 @@ static struct fb_ops savagefb_ops = {
 
 /* --------------------------------------------------------------------- */
 
-static struct fb_var_screeninfo __devinitdata savagefb_var800x600x8 = {
+static struct fb_var_screeninfo savagefb_var800x600x8 = {
 	.accel_flags =	FB_ACCELF_TEXT,
 	.xres =		800,
 	.yres =		600,
@@ -2447,7 +2447,7 @@ static int savagefb_resume(struct pci_dev* dev)
 }
 
 
-static struct pci_device_id savagefb_devices[] __devinitdata = {
+static struct pci_device_id savagefb_devices[] = {
 	{PCI_VENDOR_ID_S3, PCI_CHIP_SUPSAV_MX128,
 	 PCI_ANY_ID, PCI_ANY_ID, 0, 0, FB_ACCEL_SUPERSAVAGE},
 

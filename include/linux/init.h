@@ -84,7 +84,7 @@
 
 /* Used for HOTPLUG */
 #define __devinit        __section(.devinit.text) __cold notrace
-#define __devinitdata    __section(.devinit.data)
+#define    __section(.devinit.data)
 #define __devinitconst   __section(.devinit.rodata)
 #define __devexit        __section(.devexit.text) __exitused __cold notrace
 #define __devexitdata    __section(.devexit.data)

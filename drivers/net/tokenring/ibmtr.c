@@ -139,7 +139,7 @@ in the event that chatty debug messages are desired - jjs 12/30/98 */
 
 /* version and credits */
 #ifndef PCMCIA
-static char version[] __devinitdata =
+static char version[] =
     "\nibmtr.c: v1.3.57   8/ 7/94 Peter De Schrijver and Mark Swanson\n"
     "         v2.1.125 10/20/98 Paul Norton    <pnorton@ieee.org>\n"
     "         v2.2.0   12/30/98 Joel Sloan     <jjs@c-me.com>\n"
@@ -150,9 +150,9 @@ static char version[] __devinitdata =
 
 /* this allows displaying full adapter information */
 
-static char *channel_def[] __devinitdata = { "ISA", "MCA", "ISA P&P" };
+static char *channel_def[] = { "ISA", "MCA", "ISA P&P" };
 
-static char pcchannelid[] __devinitdata = {
+static char pcchannelid[] = {
 	0x05, 0x00, 0x04, 0x09,
 	0x04, 0x03, 0x04, 0x0f,
 	0x03, 0x06, 0x03, 0x01,
@@ -161,7 +161,7 @@ static char pcchannelid[] __devinitdata = {
 	0x03, 0x00, 0x02, 0x00
 };
 
-static char mcchannelid[] __devinitdata =  {
+static char mcchannelid[] =  {
 	0x04, 0x0d, 0x04, 0x01,
 	0x05, 0x02, 0x05, 0x03,
 	0x03, 0x06, 0x03, 0x03,
@@ -206,15 +206,15 @@ static void	ibmtr_readlog(struct net_device *dev);
 static int	ibmtr_change_mtu(struct net_device *dev, int mtu);
 static void	find_turbo_adapters(int *iolist);
 
-static int ibmtr_portlist[IBMTR_MAX_ADAPTERS+1] __devinitdata = {
+static int ibmtr_portlist[IBMTR_MAX_ADAPTERS+1] = {
 	0xa20, 0xa24, 0, 0, 0
 };
-static int __devinitdata turbo_io[IBMTR_MAX_ADAPTERS] = {0};
-static int __devinitdata turbo_irq[IBMTR_MAX_ADAPTERS] = {0};
-static int __devinitdata turbo_searched = 0;
+static int turbo_io[IBMTR_MAX_ADAPTERS] = {0};
+static int turbo_irq[IBMTR_MAX_ADAPTERS] = {0};
+static int turbo_searched = 0;
 
 #ifndef PCMCIA
-static __u32 ibmtr_mem_base __devinitdata = 0xd0000;
+static __u32 ibmtr_mem_base = 0xd0000;
 #endif
 
 static void __devinit PrtChanID(char *pcid, short stride)

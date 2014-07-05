@@ -74,8 +74,8 @@
  *
  * Experiment with v_offset to find out which works best for you.
  */
-static u32 v_offset_default __devinitdata; /* For 32 MiB Aper size, 8 should be the default */
-static u32 voffset          __devinitdata;
+static u32 v_offset_default; /* For 32 MiB Aper size, 8 should be the default */
+static u32 voffset         ;
 
 static int i810fb_cursor(struct fb_info *info, struct fb_cursor *cursor);
 static int  __devinit i810fb_init_pci (struct pci_dev *dev,
@@ -97,7 +97,7 @@ static int i810fb_blank      (int blank_mode, struct fb_info *info);
 static void i810fb_release_resource       (struct fb_info *info, struct i810fb_par *par);
 
 /* PCI */
-static const char *i810_pci_list[] __devinitdata = {
+static const char *i810_pci_list[] = {
 	"Intel(R) 810 Framebuffer Device"                                 ,
 	"Intel(R) 810-DC100 Framebuffer Device"                           ,
 	"Intel(R) 810E Framebuffer Device"                                ,
@@ -132,22 +132,22 @@ static struct pci_driver i810fb_driver = {
 	.resume   =     i810fb_resume,
 };
 
-static char *mode_option __devinitdata = NULL;
-static int vram       __devinitdata = 4;
-static int bpp        __devinitdata = 8;
-static bool mtrr      __devinitdata;
-static bool accel     __devinitdata;
-static int hsync1     __devinitdata;
-static int hsync2     __devinitdata;
-static int vsync1     __devinitdata;
-static int vsync2     __devinitdata;
-static int xres       __devinitdata;
+static char *mode_option = NULL;
+static int vram       = 4;
+static int bpp        = 8;
+static bool mtrr     ;
+static bool accel    ;
+static int hsync1    ;
+static int hsync2    ;
+static int vsync1    ;
+static int vsync2    ;
+static int xres      ;
 static int yres;
-static int vyres      __devinitdata;
-static bool sync      __devinitdata;
-static bool extvga    __devinitdata;
-static bool dcolor    __devinitdata;
-static bool ddc3      __devinitdata;
+static int vyres     ;
+static bool sync     ;
+static bool extvga   ;
+static bool dcolor   ;
+static bool ddc3     ;
 
 /*------------------------------------------------------------*/
 
@@ -1541,7 +1541,7 @@ static int i810fb_cursor(struct fb_info *info, struct fb_cursor *cursor)
 	return 0;
 }
 
-static struct fb_ops i810fb_ops __devinitdata = {
+static struct fb_ops i810fb_ops = {
 	.owner =             THIS_MODULE,
 	.fb_open =           i810fb_open,
 	.fb_release =        i810fb_release,

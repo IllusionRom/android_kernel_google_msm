@@ -37,7 +37,7 @@
 
 #define CFAG12864BFB_NAME "cfag12864bfb"
 
-static struct fb_fix_screeninfo cfag12864bfb_fix __devinitdata = {
+static struct fb_fix_screeninfo cfag12864bfb_fix = {
 	.id = "cfag12864b",
 	.type = FB_TYPE_PACKED_PIXELS,
 	.visual = FB_VISUAL_MONO10,
@@ -48,7 +48,7 @@ static struct fb_fix_screeninfo cfag12864bfb_fix __devinitdata = {
 	.accel = FB_ACCEL_NONE,
 };
 
-static struct fb_var_screeninfo cfag12864bfb_var __devinitdata = {
+static struct fb_var_screeninfo cfag12864bfb_var = {
 	.xres = CFAG12864B_WIDTH,
 	.yres = CFAG12864B_HEIGHT,
 	.xres_virtual = CFAG12864B_WIDTH,

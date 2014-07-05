@@ -60,7 +60,7 @@ enum tc35815_chiptype {
 /* indexed by tc35815_chiptype, above */
 static const struct {
 	const char *name;
-} chip_info[] __devinitdata = {
+} chip_info[] = {
 	{ "TOSHIBA TC35815CF 10/100BaseTX" },
 	{ "TOSHIBA TC35815 with Wake on LAN" },
 	{ "TOSHIBA TC35815/TX4939" },

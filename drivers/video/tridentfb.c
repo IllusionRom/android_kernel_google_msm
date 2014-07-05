@@ -53,19 +53,19 @@ static struct fb_fix_screeninfo tridentfb_fix = {
 /* defaults which are normally overriden by user values */
 
 /* video mode */
-static char *mode_option __devinitdata = "640x480-8@60";
-static int bpp __devinitdata = 8;
+static char *mode_option = "640x480-8@60";
+static int bpp = 8;
 
-static int noaccel __devinitdata;
+static int noaccel;
 
 static int center;
 static int stretch;
 
-static int fp __devinitdata;
-static int crt __devinitdata;
+static int fp;
+static int crt;
 
-static int memsize __devinitdata;
-static int memdiff __devinitdata;
+static int memsize;
+static int memdiff;
 static int nativex;
 
 module_param(mode_option, charp, 0);

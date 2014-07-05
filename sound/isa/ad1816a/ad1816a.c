@@ -231,7 +231,7 @@ static int __devinit snd_card_ad1816a_probe(int dev, struct pnp_card_link *pcard
 	return 0;
 }
 
-static unsigned int __devinitdata ad1816a_devices;
+static unsigned int ad1816a_devices;
 
 static int __devinit snd_ad1816a_pnp_detect(struct pnp_card_link *card,
 					    const struct pnp_card_device_id *id)

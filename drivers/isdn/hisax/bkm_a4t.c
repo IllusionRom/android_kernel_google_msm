@@ -323,7 +323,7 @@ static int __devinit a4t_cs_init(struct IsdnCard *card,
 	return (1);
 }
 
-static struct pci_dev *dev_a4t __devinitdata = NULL;
+static struct pci_dev *dev_a4t = NULL;
 
 int __devinit
 setup_bkm_a4t(struct IsdnCard *card)

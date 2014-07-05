@@ -151,7 +151,7 @@ static struct CARD {
 	unsigned id;
 	int cardnr;
 	char *name;
-} cards[] __devinitdata = {
+} cards[] = {
 	{ 0x13eb0070, BTTV_BOARD_HAUPPAUGE878,  "Hauppauge WinTV" },
 	{ 0x39000070, BTTV_BOARD_HAUPPAUGE878,  "Hauppauge WinTV-D" },
 	{ 0x45000070, BTTV_BOARD_HAUPPAUGEPVR,  "Hauppauge WinTV/PVR" },
@@ -4048,7 +4048,7 @@ static void __devinit boot_msp34xx(struct bttv *btv, int pin)
 
 static void __devinit init_PXC200(struct bttv *btv)
 {
-	static int vals[] __devinitdata = { 0x08, 0x09, 0x0a, 0x0b, 0x0d, 0x0d,
+	static int vals[] = { 0x08, 0x09, 0x0a, 0x0b, 0x0d, 0x0d,
 					    0x01, 0x02, 0x03, 0x04, 0x05, 0x06,
 					    0x00 };
 	unsigned int i;

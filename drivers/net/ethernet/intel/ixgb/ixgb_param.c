@@ -47,7 +47,7 @@
 
 #define IXGB_PARAM_INIT { [0 ... IXGB_MAX_NIC] = OPTION_UNSET }
 #define IXGB_PARAM(X, desc)					\
-	static int __devinitdata X[IXGB_MAX_NIC+1]		\
+	static int X[IXGB_MAX_NIC+1]		\
 		= IXGB_PARAM_INIT;				\
 	static unsigned int num_##X = 0;			\
 	module_param_array_named(X, X, int, &num_##X, 0);	\

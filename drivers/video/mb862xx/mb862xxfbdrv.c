@@ -821,7 +821,7 @@ static int __devexit of_platform_mb862xx_remove(struct platform_device *ofdev)
 /*
  * common types
  */
-static struct of_device_id __devinitdata of_platform_mb862xx_tbl[] = {
+static struct of_device_id of_platform_mb862xx_tbl[] = {
 	{ .compatible = "fujitsu,MB86276", },
 	{ .compatible = "fujitsu,lime", },
 	{ .compatible = "fujitsu,MB86277", },
@@ -982,7 +982,7 @@ static inline int mb862xx_pci_gdc_init(struct mb862xxfb_par *par)
 #define CHIP_ID(id)	\
 	{ PCI_DEVICE(PCI_VENDOR_ID_FUJITSU_LIMITED, id) }
 
-static struct pci_device_id mb862xx_pci_tbl[] __devinitdata = {
+static struct pci_device_id mb862xx_pci_tbl[] = {
 	/* MB86295/MB86296 */
 	CHIP_ID(PCI_DEVICE_ID_FUJITSU_CORALP),
 	CHIP_ID(PCI_DEVICE_ID_FUJITSU_CORALPA),

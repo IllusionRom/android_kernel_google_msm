@@ -78,7 +78,7 @@ struct carmine_fb {
 	u32 pseudo_palette[16];
 };
 
-static struct fb_fix_screeninfo carminefb_fix __devinitdata = {
+static struct fb_fix_screeninfo carminefb_fix = {
 	.id = "Carmine",
 	.type = FB_TYPE_PACKED_PIXELS,
 	.visual = FB_VISUAL_TRUECOLOR,
@@ -752,7 +752,7 @@ static void __devexit carminefb_remove(struct pci_dev *dev)
 }
 
 #define PCI_VENDOR_ID_FUJITU_LIMITED 0x10cf
-static struct pci_device_id carmine_devices[] __devinitdata = {
+static struct pci_device_id carmine_devices[] = {
 {
 	PCI_DEVICE(PCI_VENDOR_ID_FUJITU_LIMITED, 0x202b)},
 	{0, 0, 0, 0, 0, 0, 0}

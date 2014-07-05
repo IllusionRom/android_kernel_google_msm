@@ -84,7 +84,7 @@ static const char *s1d13xxxfb_prod_names[] = {
 /*
  * here we define the default struct fb_fix_screeninfo
  */
-static struct fb_fix_screeninfo __devinitdata s1d13xxxfb_fix = {
+static struct fb_fix_screeninfo s1d13xxxfb_fix = {
 	.id		= S1D_FBID,
 	.type		= FB_TYPE_PACKED_PIXELS,
 	.visual		= FB_VISUAL_PSEUDOCOLOR,
@@ -622,7 +622,7 @@ static struct fb_ops s1d13xxxfb_fbops = {
 	.fb_imageblit	= cfb_imageblit,
 };
 
-static int s1d13xxxfb_width_tab[2][4] __devinitdata = {
+static int s1d13xxxfb_width_tab[2][4] = {
 	{4, 8, 16, -1},
 	{9, 12, 18, -1},
 };

@@ -204,7 +204,7 @@ exit_release_mem:
 	return err;
 }
 
-static struct of_device_id __devinitdata sja1000_ofp_table[] = {
+static struct of_device_id sja1000_ofp_table[] = {
 	{.compatible = "nxp,sja1000"},
 	{},
 };

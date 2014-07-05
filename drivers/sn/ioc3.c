@@ -575,7 +575,7 @@ void ioc3_unregister_submodule(struct ioc3_submodule *is)
  * Device management *
  *********************/
 
-static char * __devinitdata
+static char *
 ioc3_class_names[]={"unknown", "IP27 BaseIO", "IP30 system", "MENET 1/2/3",
 			"MENET 4", "CADduo", "Altix Serial"};
 

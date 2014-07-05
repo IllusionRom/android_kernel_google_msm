@@ -777,7 +777,7 @@ static int __devinit avm_pnp_setup(struct IsdnCardState *cs)
 
 #else
 
-static struct pnp_card *pnp_avm_c __devinitdata = NULL;
+static struct pnp_card *pnp_avm_c = NULL;
 
 static int __devinit avm_pnp_setup(struct IsdnCardState *cs)
 {
@@ -832,7 +832,7 @@ static int __devinit avm_pci_setup(struct IsdnCardState *cs)
 
 #else
 
-static struct pci_dev *dev_avm __devinitdata = NULL;
+static struct pci_dev *dev_avm = NULL;
 
 static int __devinit avm_pci_setup(struct IsdnCardState *cs)
 {

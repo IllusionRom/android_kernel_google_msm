@@ -71,7 +71,7 @@
 
 #include "3c359.h"
 
-static char version[] __devinitdata  = 
+static char version[]  = 
 "3c359.c v1.2.0 2/17/01 - Mike Phillips (mikep@linuxtr.net)" ; 
 
 #define FW_NAME		"3com/3C359.bin"

@@ -70,34 +70,34 @@ static struct pci_device_id nvidiafb_pci_tbl[] = {
 MODULE_DEVICE_TABLE(pci, nvidiafb_pci_tbl);
 
 /* command line data, set in nvidiafb_setup() */
-static int flatpanel __devinitdata = -1;	/* Autodetect later */
-static int fpdither __devinitdata = -1;
-static int forceCRTC __devinitdata = -1;
-static int hwcur __devinitdata = 0;
-static int noaccel __devinitdata = 0;
-static int noscale __devinitdata = 0;
-static int paneltweak __devinitdata = 0;
-static int vram __devinitdata = 0;
-static int bpp __devinitdata = 8;
-static int reverse_i2c __devinitdata;
+static int flatpanel = -1;	/* Autodetect later */
+static int fpdither = -1;
+static int forceCRTC = -1;
+static int hwcur = 0;
+static int noaccel = 0;
+static int noscale = 0;
+static int paneltweak = 0;
+static int vram = 0;
+static int bpp = 8;
+static int reverse_i2c;
 #ifdef CONFIG_MTRR
-static bool nomtrr __devinitdata = false;
+static bool nomtrr = false;
 #endif
 #ifdef CONFIG_PMAC_BACKLIGHT
-static int backlight __devinitdata = 1;
+static int backlight = 1;
 #else
-static int backlight __devinitdata = 0;
+static int backlight = 0;
 #endif
 
-static char *mode_option __devinitdata = NULL;
+static char *mode_option = NULL;
 
-static struct fb_fix_screeninfo __devinitdata nvidiafb_fix = {
+static struct fb_fix_screeninfo nvidiafb_fix = {
 	.type = FB_TYPE_PACKED_PIXELS,
 	.xpanstep = 8,
 	.ypanstep = 1,
 };
 
-static struct fb_var_screeninfo __devinitdata nvidiafb_default_var = {
+static struct fb_var_screeninfo nvidiafb_default_var = {
 	.xres = 640,
 	.yres = 480,
 	.xres_virtual = 640,

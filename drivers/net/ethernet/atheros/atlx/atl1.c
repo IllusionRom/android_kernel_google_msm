@@ -113,7 +113,7 @@ static const struct ethtool_ops atl1_ethtool_ops;
  *
  * Default Value: 100 (200us)
  */
-static int __devinitdata int_mod_timer[ATL1_MAX_NIC+1] = ATL1_PARAM_INIT;
+static int int_mod_timer[ATL1_MAX_NIC+1] = ATL1_PARAM_INIT;
 static unsigned int num_int_mod_timer;
 module_param_array_named(int_mod_timer, int_mod_timer, int,
 	&num_int_mod_timer, 0);

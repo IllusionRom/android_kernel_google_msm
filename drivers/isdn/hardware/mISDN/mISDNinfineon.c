@@ -125,7 +125,7 @@ struct inf_hw {
 #define PCI_SUBVENDOR_SEDLBAUER_PCI     0x53
 #define PCI_SUB_ID_SEDLBAUER            0x01
 
-static struct pci_device_id infineon_ids[] __devinitdata = {
+static struct pci_device_id infineon_ids[] = {
 	{ PCI_VDEVICE(EICON, PCI_DEVICE_ID_EICON_DIVA20), INF_DIVA20 },
 	{ PCI_VDEVICE(EICON, PCI_DEVICE_ID_EICON_DIVA20_U), INF_DIVA20U },
 	{ PCI_VDEVICE(EICON, PCI_DEVICE_ID_EICON_DIVA201), INF_DIVA201 },

@@ -1046,7 +1046,7 @@ static int xuartps_resume(struct platform_device *pdev)
 /* Match table for of_platform binding */
 
 #ifdef CONFIG_OF
-static struct of_device_id xuartps_of_match[] __devinitdata = {
+static struct of_device_id xuartps_of_match[] = {
 	{ .compatible = "xlnx,xuartps", },
 	{}
 };

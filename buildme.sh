@@ -8,9 +8,9 @@ USEFTP=0;
 SOURCE_DIR="$(pwd)"
 #crosscompile stuff
 CROSSARCH="arm"
-CROSSCC="$CROSSARCH-eabi-"
+CROSSCC="$CROSSARCH-linux-gnueabihf-"
 TOOLCHAIN_D="$(pwd)/toolch"
-TOOLCHAIN="/home/hieu/github/arm-eabi-4.9/bin"
+TOOLCHAIN="/home/hieu/llvmlinux/arch/arm/toolchain/linaro/gcc-linaro-arm-linux-gnueabihf-4.9-2014.06_linux/bin"
 #our used directories
 PREBUILT="$(pwd)/prebuilt"
 OUT_DIR="$(pwd)/out"

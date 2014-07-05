@@ -26,7 +26,7 @@
    */
 
 /* Known cards that have old-style EEPROMs. */
-static struct eeprom_fixup eeprom_fixups[] __devinitdata = {
+static struct eeprom_fixup eeprom_fixups[] = {
   {"Asante", 0, 0, 0x94, {0x1e00, 0x0000, 0x0800, 0x0100, 0x018c,
 			  0x0000, 0x0000, 0xe078, 0x0001, 0x0050, 0x0018 }},
   {"SMC9332DST", 0, 0, 0xC0, { 0x1e00, 0x0000, 0x0800, 0x041f,
@@ -79,7 +79,7 @@ static struct eeprom_fixup eeprom_fixups[] __devinitdata = {
   {NULL}};
 
 
-static const char *block_name[] __devinitdata = {
+static const char *block_name[] = {
 	"21140 non-MII",
 	"21140 MII PHY",
 	"21142 Serial PHY",

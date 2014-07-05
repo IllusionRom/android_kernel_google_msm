@@ -37,7 +37,7 @@
 #include <asm/prom.h>
 #endif
 
-static char version[] __devinitdata =
+static char version[] =
 	"Linux Tulip driver version " DRV_VERSION " (" DRV_RELDATE ")\n";
 
 /* A few user-configurable values. */

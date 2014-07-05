@@ -197,7 +197,7 @@ struct r6040_private {
 	int old_duplex;
 };
 
-static char version[] __devinitdata = DRV_NAME
+static char version[] = DRV_NAME
 	": RDC R6040 NAPI net driver,"
 	"version "DRV_VERSION " (" DRV_RELDATE ")";
 

@@ -78,7 +78,7 @@ static int __devinit snd_vt1724_amp_add_controls(struct snd_ice1712 *ice)
 
 
 /* entry point */
-struct snd_ice1712_card_info snd_vt1724_amp_cards[] __devinitdata = {
+struct snd_ice1712_card_info snd_vt1724_amp_cards[] = {
 	{
 		.subvendor = VT1724_SUBDEVICE_AV710,
 		.name = "Chaintech AV-710",

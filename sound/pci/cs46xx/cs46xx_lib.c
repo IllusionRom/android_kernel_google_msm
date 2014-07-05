@@ -2092,7 +2092,7 @@ static int snd_cs46xx_spdif_stream_put(struct snd_kcontrol *kcontrol,
 #endif /* CONFIG_SND_CS46XX_NEW_DSP */
 
 
-static struct snd_kcontrol_new snd_cs46xx_controls[] __devinitdata = {
+static struct snd_kcontrol_new snd_cs46xx_controls[] = {
 {
 	.iface = SNDRV_CTL_ELEM_IFACE_MIXER,
 	.name = "DAC Volume",
@@ -3477,7 +3477,7 @@ struct cs_card_type
 	void (*mixer_init)(struct snd_cs46xx *);
 };
 
-static struct cs_card_type __devinitdata cards[] = {
+static struct cs_card_type cards[] = {
 	{
 		.vendor = 0x1489,
 		.id = 0x7001,

@@ -69,7 +69,7 @@
 int ivtv_first_minor;
 
 /* add your revision and whatnot here */
-static struct pci_device_id ivtv_pci_tbl[] __devinitdata = {
+static struct pci_device_id ivtv_pci_tbl[] = {
 	{PCI_VENDOR_ID_ICOMP, PCI_DEVICE_ID_IVTV15,
 	 PCI_ANY_ID, PCI_ANY_ID, 0, 0, 0},
 	{PCI_VENDOR_ID_ICOMP, PCI_DEVICE_ID_IVTV16,

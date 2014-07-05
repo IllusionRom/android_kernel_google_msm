@@ -270,7 +270,7 @@ static void stdsp24_ak4524_lock(struct snd_akm4xxx *ak, int chip)
 static int __devinit snd_ice1712_value_init(struct snd_ice1712 *ice)
 {
 	/* Hoontech STDSP24 with modified hardware */
-	static struct snd_akm4xxx akm_stdsp24_mv __devinitdata = {
+	static struct snd_akm4xxx akm_stdsp24_mv = {
 		.num_adcs = 2,
 		.num_dacs = 2,
 		.type = SND_AK4524,
@@ -279,7 +279,7 @@ static int __devinit snd_ice1712_value_init(struct snd_ice1712 *ice)
 		}
 	};
 
-	static struct snd_ak4xxx_private akm_stdsp24_mv_priv __devinitdata = {
+	static struct snd_ak4xxx_private akm_stdsp24_mv_priv = {
 		.caddr = 2,
 		.cif = 1, /* CIF high */
 		.data_mask = ICE1712_STDSP24_SERIAL_DATA,
@@ -329,7 +329,7 @@ static int __devinit snd_ice1712_ez8_init(struct snd_ice1712 *ice)
 
 
 /* entry point */
-struct snd_ice1712_card_info snd_ice1712_hoontech_cards[] __devinitdata = {
+struct snd_ice1712_card_info snd_ice1712_hoontech_cards[] = {
 	{
 		.subvendor = ICE1712_SUBDEVICE_STDSP24,
 		.name = "Hoontech SoundTrack Audio DSP24",

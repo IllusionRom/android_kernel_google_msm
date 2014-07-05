@@ -398,7 +398,7 @@ static void __devexit gvp11_remove(struct zorro_dev *z)
 	 * SERIES I though).
 	 */
 
-static struct zorro_device_id gvp11_zorro_tbl[] __devinitdata = {
+static struct zorro_device_id gvp11_zorro_tbl[] = {
 	{ ZORRO_PROD_GVP_COMBO_030_R3_SCSI,	~0x00ffffff },
 	{ ZORRO_PROD_GVP_SERIES_II,		~0x00ffffff },
 	{ ZORRO_PROD_GVP_GFORCE_030_SCSI,	~0x01ffffff },

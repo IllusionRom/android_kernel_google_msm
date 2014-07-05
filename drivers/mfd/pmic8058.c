@@ -174,7 +174,7 @@ static const struct resource pm8058_charger_resources[] __devinitconst = {
 	SINGLE_IRQ_RESOURCE("VBATDET_LOW",	PM8058_VBATDET_LOW_IRQ),
 };
 
-static struct mfd_cell pm8058_charger_cell __devinitdata = {
+static struct mfd_cell pm8058_charger_cell = {
 	.name		= "pm8058-charger",
 	.id		= -1,
 	.resources	= pm8058_charger_resources,
@@ -185,14 +185,14 @@ static const struct resource misc_cell_resources[] __devinitconst = {
 	SINGLE_IRQ_RESOURCE("pm8xxx_osc_halt_irq", PM8058_OSCHALT_IRQ),
 };
 
-static struct mfd_cell misc_cell __devinitdata = {
+static struct mfd_cell misc_cell = {
 	.name		= PM8XXX_MISC_DEV_NAME,
 	.id		= -1,
 	.resources	= misc_cell_resources,
 	.num_resources	= ARRAY_SIZE(misc_cell_resources),
 };
 
-static struct mfd_cell pm8058_pwm_cell __devinitdata = {
+static struct mfd_cell pm8058_pwm_cell = {
 	.name		= "pm8058-pwm",
 	.id		= -1,
 };
@@ -201,7 +201,7 @@ static struct resource xoadc_resources[] = {
 	SINGLE_IRQ_RESOURCE(NULL, PM8058_ADC_IRQ),
 };
 
-static struct mfd_cell xoadc_cell __devinitdata = {
+static struct mfd_cell xoadc_cell = {
 	.name		= "pm8058-xoadc",
 	.id		= -1,
 	.resources	= xoadc_resources,
@@ -223,7 +223,7 @@ static struct pm8xxx_tm_core_data thermal_alarm_cdata = {
 	.irq_name_over_temp		= "pm8058_overtemp_irq",
 };
 
-static struct mfd_cell thermal_alarm_cell __devinitdata = {
+static struct mfd_cell thermal_alarm_cell = {
 	.name		= PM8XXX_TM_DEV_NAME,
 	.id		= -1,
 	.resources	= thermal_alarm_cell_resources,
@@ -232,7 +232,7 @@ static struct mfd_cell thermal_alarm_cell __devinitdata = {
 	.pdata_size	= sizeof(struct pm8xxx_tm_core_data),
 };
 
-static struct mfd_cell debugfs_cell __devinitdata = {
+static struct mfd_cell debugfs_cell = {
 	.name		= "pm8xxx-debug",
 	.id		= -1,
 	.platform_data	= "pm8058-dbg",
@@ -272,26 +272,26 @@ static const struct resource batt_alarm_cell_resources[] __devinitconst = {
 	SINGLE_IRQ_RESOURCE("pm8058_batt_alarm_irq", PM8058_BATT_ALARM_IRQ),
 };
 
-static struct mfd_cell leds_cell __devinitdata = {
+static struct mfd_cell leds_cell = {
 	.name		= "pm8058-led",
 	.id		= -1,
 };
 
-static struct mfd_cell othc0_cell __devinitdata = {
+static struct mfd_cell othc0_cell = {
 	.name		= "pm8058-othc",
 	.id		= 0,
 	.resources	= othc0_cell_resources,
 	.num_resources  = ARRAY_SIZE(othc0_cell_resources),
 };
 
-static struct mfd_cell othc1_cell __devinitdata = {
+static struct mfd_cell othc1_cell = {
 	.name		= "pm8058-othc",
 	.id		= 1,
 	.resources	= othc1_cell_resources,
 	.num_resources  = ARRAY_SIZE(othc1_cell_resources),
 };
 
-static struct mfd_cell othc2_cell __devinitdata = {
+static struct mfd_cell othc2_cell = {
 	.name		= "pm8058-othc",
 	.id		= 2,
 	.resources	= othc2_cell_resources,
@@ -306,7 +306,7 @@ static struct pm8xxx_batt_alarm_core_data batt_alarm_cdata = {
 	.reg_addr_pwm_ctrl	= REG_BATT_ALARM_PWM_CTRL,
 };
 
-static struct mfd_cell batt_alarm_cell __devinitdata = {
+static struct mfd_cell batt_alarm_cell = {
 	.name		= PM8XXX_BATT_ALARM_DEV_NAME,
 	.id		= -1,
 	.resources	= batt_alarm_cell_resources,
@@ -315,12 +315,12 @@ static struct mfd_cell batt_alarm_cell __devinitdata = {
 	.pdata_size	= sizeof(struct pm8xxx_batt_alarm_core_data),
 };
 
-static struct mfd_cell upl_cell __devinitdata = {
+static struct mfd_cell upl_cell = {
 	.name		= PM8XXX_UPL_DEV_NAME,
 	.id		= -1,
 };
 
-static struct mfd_cell nfc_cell __devinitdata = {
+static struct mfd_cell nfc_cell = {
 	.name		= PM8XXX_NFC_DEV_NAME,
 	.id		= -1,
 };
@@ -335,7 +335,7 @@ static const struct resource rtc_cell_resources[] __devinitconst = {
 	},
 };
 
-static struct mfd_cell rtc_cell __devinitdata = {
+static struct mfd_cell rtc_cell = {
 	.name		= PM8XXX_RTC_DEV_NAME,
 	.id		= -1,
 	.resources	= rtc_cell_resources,
@@ -347,12 +347,12 @@ static const struct resource resources_pwrkey[] __devinitconst = {
 	SINGLE_IRQ_RESOURCE(NULL, PM8058_PWRKEY_PRESS_IRQ),
 };
 
-static struct mfd_cell vibrator_cell __devinitdata = {
+static struct mfd_cell vibrator_cell = {
 	.name		= PM8XXX_VIBRATOR_DEV_NAME,
 	.id		= -1,
 };
 
-static struct mfd_cell pwrkey_cell __devinitdata = {
+static struct mfd_cell pwrkey_cell = {
 	.name		= PM8XXX_PWRKEY_DEV_NAME,
 	.id		= -1,
 	.num_resources	= ARRAY_SIZE(resources_pwrkey),
@@ -364,7 +364,7 @@ static const struct resource resources_keypad[] = {
 	SINGLE_IRQ_RESOURCE(NULL, PM8058_KEYSTUCK_IRQ),
 };
 
-static struct mfd_cell keypad_cell __devinitdata = {
+static struct mfd_cell keypad_cell = {
 	.name		= PM8XXX_KEYPAD_DEV_NAME,
 	.id		= -1,
 	.num_resources  = ARRAY_SIZE(resources_keypad),
@@ -380,7 +380,7 @@ static const struct resource mpp_cell_resources[] __devinitconst = {
 	},
 };
 
-static struct mfd_cell mpp_cell __devinitdata = {
+static struct mfd_cell mpp_cell = {
 	.name		= PM8XXX_MPP_DEV_NAME,
 	.id		= 0,
 	.resources	= mpp_cell_resources,
@@ -396,7 +396,7 @@ static const struct resource gpio_cell_resources[] __devinitconst = {
 	},
 };
 
-static struct mfd_cell gpio_cell __devinitdata = {
+static struct mfd_cell gpio_cell = {
 	.name		= PM8XXX_GPIO_DEV_NAME,
 	.id		= -1,
 	.resources	= gpio_cell_resources,

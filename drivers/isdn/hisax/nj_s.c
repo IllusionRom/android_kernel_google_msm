@@ -256,7 +256,7 @@ static int __devinit njs_cs_init_rest(struct IsdnCard *card,
 	return (1);
 }
 
-static struct pci_dev *dev_netjet __devinitdata = NULL;
+static struct pci_dev *dev_netjet = NULL;
 
 int __devinit
 setup_netjet_s(struct IsdnCard *card)

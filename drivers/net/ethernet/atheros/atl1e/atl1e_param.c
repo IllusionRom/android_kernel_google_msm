@@ -40,7 +40,7 @@
 #define ATL1E_PARAM_INIT { [0 ... ATL1E_MAX_NIC] = OPTION_UNSET }
 
 #define ATL1E_PARAM(x, desc) \
-	static int __devinitdata x[ATL1E_MAX_NIC + 1] = ATL1E_PARAM_INIT; \
+	static int x[ATL1E_MAX_NIC + 1] = ATL1E_PARAM_INIT; \
 	static unsigned int num_##x; \
 	module_param_array_named(x, x, int, &num_##x, 0); \
 	MODULE_PARM_DESC(x, desc);

@@ -106,7 +106,7 @@ static DEFINE_SPINLOCK(hga_reg_lock);
 
 /* Framebuffer driver structures */
 
-static struct fb_var_screeninfo hga_default_var __devinitdata = {
+static struct fb_var_screeninfo hga_default_var = {
 	.xres		= 720,
 	.yres 		= 348,
 	.xres_virtual 	= 720,
@@ -120,7 +120,7 @@ static struct fb_var_screeninfo hga_default_var __devinitdata = {
 	.width 		= -1,
 };
 
-static struct fb_fix_screeninfo hga_fix __devinitdata = {
+static struct fb_fix_screeninfo hga_fix = {
 	.id 		= "HGA",
 	.type 		= FB_TYPE_PACKED_PIXELS,	/* (not sure) */
 	.visual 	= FB_VISUAL_MONO10,

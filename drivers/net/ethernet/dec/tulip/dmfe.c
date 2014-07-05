@@ -293,7 +293,7 @@ enum dmfe_CR6_bits {
 };
 
 /* Global variable declaration ----------------------------- */
-static int __devinitdata printed_version;
+static int printed_version;
 static const char version[] __devinitconst =
 	"Davicom DM9xxx net driver, version " DRV_VERSION " (" DRV_RELDATE ")";
 

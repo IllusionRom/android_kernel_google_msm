@@ -97,7 +97,7 @@
 
 #ifndef CONFIG_PPC_PMAC
 /* default mode */
-static struct fb_var_screeninfo default_var __devinitdata = {
+static struct fb_var_screeninfo default_var = {
 	/* 640x480, 60 Hz, Non-Interlaced (25.175 MHz dotclock) */
 	640, 480, 640, 480, 0, 0, 8, 0,
 	{0, 8, 0}, {0, 8, 0}, {0, 8, 0}, {0, 0, 0},
@@ -120,7 +120,7 @@ static struct fb_var_screeninfo default_var = {
 
 /* default modedb mode */
 /* 640x480, 60 Hz, Non-Interlaced (25.172 MHz dotclock) */
-static struct fb_videomode defaultmode __devinitdata = {
+static struct fb_videomode defaultmode = {
 	.refresh =	60,
 	.xres =		640,
 	.yres =		480,
@@ -148,7 +148,7 @@ enum {
 };
 
 /* Must match above enum */
-static const char *r128_family[] __devinitdata = {
+static const char *r128_family[] = {
 	"AGP",
 	"PCI",
 	"PRO AGP",
@@ -332,7 +332,7 @@ static const struct aty128_meminfo sdr_sgram =
 static const struct aty128_meminfo ddr_sgram =
 	{ 4, 4, 3, 3, 2, 3, 1, 16, 31, 16, "64-bit DDR SGRAM" };
 
-static struct fb_fix_screeninfo aty128fb_fix __devinitdata = {
+static struct fb_fix_screeninfo aty128fb_fix = {
 	.id		= "ATY Rage128",
 	.type		= FB_TYPE_PACKED_PIXELS,
 	.visual		= FB_VISUAL_PSEUDOCOLOR,
@@ -342,24 +342,24 @@ static struct fb_fix_screeninfo aty128fb_fix __devinitdata = {
 	.accel		= FB_ACCEL_ATI_RAGE128,
 };
 
-static char *mode_option __devinitdata = NULL;
+static char *mode_option = NULL;
 
 #ifdef CONFIG_PPC_PMAC
-static int default_vmode __devinitdata = VMODE_1024_768_60;
-static int default_cmode __devinitdata = CMODE_8;
+static int default_vmode = VMODE_1024_768_60;
+static int default_cmode = CMODE_8;
 #endif
 
-static int default_crt_on __devinitdata = 0;
-static int default_lcd_on __devinitdata = 1;
+static int default_crt_on = 0;
+static int default_lcd_on = 1;
 
 #ifdef CONFIG_MTRR
 static bool mtrr = true;
 #endif
 
 #ifdef CONFIG_PMAC_BACKLIGHT
-static int backlight __devinitdata = 1;
+static int backlight = 1;
 #else
-static int backlight __devinitdata = 0;
+static int backlight = 0;
 #endif
 
 /* PLL constants */

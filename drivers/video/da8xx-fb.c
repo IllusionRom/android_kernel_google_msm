@@ -168,7 +168,7 @@ struct da8xx_fb_par {
 };
 
 /* Variable Screen Information */
-static struct fb_var_screeninfo da8xx_fb_var __devinitdata = {
+static struct fb_var_screeninfo da8xx_fb_var = {
 	.xoffset = 0,
 	.yoffset = 0,
 	.transp = {0, 0, 0},
@@ -185,7 +185,7 @@ static struct fb_var_screeninfo da8xx_fb_var __devinitdata = {
 	.vmode = FB_VMODE_NONINTERLACED
 };
 
-static struct fb_fix_screeninfo da8xx_fb_fix __devinitdata = {
+static struct fb_fix_screeninfo da8xx_fb_fix = {
 	.id = "DA8xx FB Drv",
 	.type = FB_TYPE_PACKED_PIXELS,
 	.type_aux = 0,

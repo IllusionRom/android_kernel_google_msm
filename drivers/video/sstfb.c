@@ -104,7 +104,7 @@ static bool slowpci;		/* slow PCI settings */
 */
 #define DEFAULT_VIDEO_MODE "640x480@60"
 
-static char *mode_option __devinitdata = DEFAULT_VIDEO_MODE;
+static char *mode_option = DEFAULT_VIDEO_MODE;
 
 enum {
 	ID_VOODOO1 = 0,
@@ -113,7 +113,7 @@ enum {
 
 #define IS_VOODOO2(par) ((par)->type == ID_VOODOO2)
 
-static struct sst_spec voodoo_spec[] __devinitdata = {
+static struct sst_spec voodoo_spec[] = {
  { .name = "Voodoo Graphics", .default_gfx_clock = 50000, .max_gfxclk = 60 },
  { .name = "Voodoo2",	      .default_gfx_clock = 75000, .max_gfxclk = 85 },
 };
@@ -1105,7 +1105,7 @@ static void sst_set_vidmod_ics(struct fb_info *info, const int bpp)
  */
 
 
-static struct dac_switch dacs[] __devinitdata = {
+static struct dac_switch dacs[] = {
 	{	.name		= "TI TVP3409",
 		.detect		= sst_detect_ti,
 		.set_pll	= sst_set_pll_att_ti,

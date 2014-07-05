@@ -286,7 +286,7 @@ static int __devinit snd_card_als100_probe(int dev,
 	return 0;
 }
 
-static unsigned int __devinitdata als100_devices;
+static unsigned int als100_devices;
 
 static int __devinit snd_als100_pnp_detect(struct pnp_card_link *card,
 					   const struct pnp_card_device_id *id)

@@ -225,7 +225,7 @@ struct initvalues {
 	__u8 addr, value;
 };
 
-static struct initvalues ibm_initregs[] __devinitdata = {
+static struct initvalues ibm_initregs[] = {
 	{ CLKCTL,	0x21 },
 	{ SYNCCTL,	0x00 },
 	{ HSYNCPOS,	0x00 },
@@ -272,7 +272,7 @@ static struct initvalues ibm_initregs[] __devinitdata = {
 	{ KEYCTL,	0x00 }
 };
 
-static struct initvalues tvp_initregs[] __devinitdata = {
+static struct initvalues tvp_initregs[] = {
 	{ TVPIRICC,	0x00 },
 	{ TVPIRBRC,	0xe4 },
 	{ TVPIRLAC,	0x06 },
@@ -336,7 +336,7 @@ enum {
 static int inverse = 0;
 static char fontname[40] __initdata = { 0 };
 #if defined(CONFIG_PPC)
-static signed char init_vmode __devinitdata = -1, init_cmode __devinitdata = -1;
+static signed char init_vmode = -1, init_cmode = -1;
 #endif
 
 static struct imstt_regvals tvp_reg_init_2 = {

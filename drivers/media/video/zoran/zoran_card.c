@@ -369,7 +369,7 @@ static const unsigned short bt819_addrs[] = { 0x45, I2C_CLIENT_END };
 static const unsigned short bt856_addrs[] = { 0x44, I2C_CLIENT_END };
 static const unsigned short bt866_addrs[] = { 0x44, I2C_CLIENT_END };
 
-static struct card_info zoran_cards[NUM_CARDS] __devinitdata = {
+static struct card_info zoran_cards[NUM_CARDS] = {
 	{
 		.type = DC10_old,
 		.name = "DC10(old)",

@@ -293,7 +293,7 @@ int pci_mmap_page_range(struct pci_dev *dev, struct vm_area_struct *vma,
 		vma->vm_end - vma->vm_start, vma->vm_page_prot);
 }
 
-char * (*pcibios_plat_setup)(char *str) __devinitdata;
+char * (*pcibios_plat_setup)(char *str);
 
 char *__devinit pcibios_setup(char *str)
 {

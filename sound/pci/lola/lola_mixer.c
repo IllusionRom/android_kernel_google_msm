@@ -579,7 +579,7 @@ static int lola_analog_vol_tlv(struct snd_kcontrol *kcontrol, int op_flag,
 	return 0;
 }
 
-static struct snd_kcontrol_new lola_analog_mixer __devinitdata = {
+static struct snd_kcontrol_new lola_analog_mixer = {
 	.iface = SNDRV_CTL_ELEM_IFACE_MIXER,
 	.access = (SNDRV_CTL_ELEM_ACCESS_READWRITE |
 		   SNDRV_CTL_ELEM_ACCESS_TLV_READ |
@@ -644,7 +644,7 @@ static int lola_input_src_put(struct snd_kcontrol *kcontrol,
 	return lola_set_src_config(chip, mask, true);
 }
 
-static struct snd_kcontrol_new lola_input_src_mixer __devinitdata = {
+static struct snd_kcontrol_new lola_input_src_mixer = {
 	.name = "Digital SRC Capture Switch",
 	.iface = SNDRV_CTL_ELEM_IFACE_MIXER,
 	.info = lola_input_src_info,
@@ -726,7 +726,7 @@ static int lola_src_gain_put(struct snd_kcontrol *kcontrol,
 /* raw value: 0 = -84dB, 336 = 0dB, 408=18dB, incremented 1 for mute */
 static const DECLARE_TLV_DB_SCALE(lola_src_gain_tlv, -8425, 25, 1);
 
-static struct snd_kcontrol_new lola_src_gain_mixer __devinitdata = {
+static struct snd_kcontrol_new lola_src_gain_mixer = {
 	.iface = SNDRV_CTL_ELEM_IFACE_MIXER,
 	.access = (SNDRV_CTL_ELEM_ACCESS_READWRITE |
 		   SNDRV_CTL_ELEM_ACCESS_TLV_READ),
@@ -813,7 +813,7 @@ static int lola_dest_gain_put(struct snd_kcontrol *kcontrol,
 
 static const DECLARE_TLV_DB_SCALE(lola_dest_gain_tlv, -8425, 25, 1);
 
-static struct snd_kcontrol_new lola_dest_gain_mixer __devinitdata = {
+static struct snd_kcontrol_new lola_dest_gain_mixer = {
 	.iface = SNDRV_CTL_ELEM_IFACE_MIXER,
 	.access = (SNDRV_CTL_ELEM_ACCESS_READWRITE |
 		   SNDRV_CTL_ELEM_ACCESS_TLV_READ),

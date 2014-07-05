@@ -242,7 +242,7 @@ static struct {
 	const char *name;
 	unsigned long flags;
 	unsigned int eeprom_size;
-} natsemi_pci_info[] __devinitdata = {
+} natsemi_pci_info[] = {
 	{ "Aculab E1/T1 PMXc cPCI carrier card", NATSEMI_FLAG_IGNORE_PHY, 128 },
 	{ "NatSemi DP8381[56]", 0, 24 },
 };

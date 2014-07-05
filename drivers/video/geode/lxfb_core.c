@@ -35,7 +35,7 @@ static int vt_switch;
  * we try to make it something sane - 640x480-60 is sane
  */
 
-static struct fb_videomode geode_modedb[] __devinitdata = {
+static struct fb_videomode geode_modedb[] = {
 	/* 640x480-60 */
 	{ NULL, 60, 640, 480, 39682, 48, 8, 25, 2, 88, 2,
 	  FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
@@ -219,7 +219,7 @@ static struct fb_videomode geode_modedb[] __devinitdata = {
 #ifdef CONFIG_OLPC
 #include <asm/olpc.h>
 
-static struct fb_videomode olpc_dcon_modedb[] __devinitdata = {
+static struct fb_videomode olpc_dcon_modedb[] = {
 	/* The only mode the DCON has is 1200x900 */
 	{ NULL, 50, 1200, 900, 17460, 24, 8, 4, 5, 8, 3,
 	  FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,

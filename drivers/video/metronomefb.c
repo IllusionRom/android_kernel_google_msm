@@ -99,7 +99,7 @@ static struct epd_frame epd_frame_table[] = {
 	},
 };
 
-static struct fb_fix_screeninfo metronomefb_fix __devinitdata = {
+static struct fb_fix_screeninfo metronomefb_fix = {
 	.id =		"metronomefb",
 	.type =		FB_TYPE_PACKED_PIXELS,
 	.visual =	FB_VISUAL_STATIC_PSEUDOCOLOR,
@@ -110,7 +110,7 @@ static struct fb_fix_screeninfo metronomefb_fix __devinitdata = {
 	.accel =	FB_ACCEL_NONE,
 };
 
-static struct fb_var_screeninfo metronomefb_var __devinitdata = {
+static struct fb_var_screeninfo metronomefb_var = {
 	.xres		= DPY_W,
 	.yres		= DPY_H,
 	.xres_virtual	= DPY_W,

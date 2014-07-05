@@ -1487,7 +1487,7 @@ struct dev_priv {
 #define DRV_VERSION		"1.0.0"
 #define DRV_RELDATE		"Feb 8, 2010"
 
-static char version[] __devinitdata =
+static char version[] =
 	"Micrel " DEVICE_NAME " " DRV_VERSION " (" DRV_RELDATE ")";
 
 static u8 DEFAULT_MAC_ADDRESS[] = { 0x00, 0x10, 0xA1, 0x88, 0x42, 0x01 };

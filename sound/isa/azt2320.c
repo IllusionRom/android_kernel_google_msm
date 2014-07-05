@@ -264,7 +264,7 @@ static int __devinit snd_card_azt2320_probe(int dev,
 	return 0;
 }
 
-static unsigned int __devinitdata azt2320_devices;
+static unsigned int azt2320_devices;
 
 static int __devinit snd_azt2320_pnp_detect(struct pnp_card_link *card,
 					    const struct pnp_card_device_id *id)

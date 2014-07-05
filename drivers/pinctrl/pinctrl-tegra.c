@@ -419,7 +419,7 @@ static struct pinctrl_desc tegra_pinctrl_desc = {
 	.owner = THIS_MODULE,
 };
 
-static struct of_device_id tegra_pinctrl_of_match[] __devinitdata = {
+static struct of_device_id tegra_pinctrl_of_match[] = {
 #ifdef CONFIG_PINCTRL_TEGRA20
 	{
 		.compatible = "nvidia,tegra20-pinmux-disabled",

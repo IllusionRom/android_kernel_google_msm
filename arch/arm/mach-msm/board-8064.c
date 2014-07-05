@@ -1530,7 +1530,7 @@ static struct platform_device msm_device_wcnss_wlan = {
 	.dev		= {.platform_data = &qcom_wcnss_pdata},
 };
 
-static struct platform_device msm_device_iris_fm __devinitdata = {
+static struct platform_device msm_device_iris_fm = {
 	.name = "iris_fm",
 	.id   = -1,
 };
@@ -2270,7 +2270,7 @@ static void __init mpq8064_pcie_init(void)
 	}
 }
 
-static struct platform_device apq8064_device_ext_5v_vreg __devinitdata = {
+static struct platform_device apq8064_device_ext_5v_vreg = {
 	.name	= GPIO_REGULATOR_DEV_NAME,
 	.id	= PM8921_MPP_PM_TO_SYS(7),
 	.dev	= {
@@ -2279,7 +2279,7 @@ static struct platform_device apq8064_device_ext_5v_vreg __devinitdata = {
 	},
 };
 
-static struct platform_device apq8064_device_ext_mpp8_vreg __devinitdata = {
+static struct platform_device apq8064_device_ext_mpp8_vreg = {
 	.name	= GPIO_REGULATOR_DEV_NAME,
 	.id	= PM8921_MPP_PM_TO_SYS(8),
 	.dev	= {
@@ -2288,7 +2288,7 @@ static struct platform_device apq8064_device_ext_mpp8_vreg __devinitdata = {
 	},
 };
 
-static struct platform_device apq8064_device_ext_3p3v_vreg __devinitdata = {
+static struct platform_device apq8064_device_ext_3p3v_vreg = {
 	.name	= GPIO_REGULATOR_DEV_NAME,
 	.id	= APQ8064_EXT_3P3V_REG_EN_GPIO,
 	.dev	= {
@@ -2297,7 +2297,7 @@ static struct platform_device apq8064_device_ext_3p3v_vreg __devinitdata = {
 	},
 };
 
-static struct platform_device apq8064_device_ext_ts_sw_vreg __devinitdata = {
+static struct platform_device apq8064_device_ext_ts_sw_vreg = {
 	.name	= GPIO_REGULATOR_DEV_NAME,
 	.id	= PM8921_GPIO_PM_TO_SYS(23),
 	.dev	= {
@@ -2306,7 +2306,7 @@ static struct platform_device apq8064_device_ext_ts_sw_vreg __devinitdata = {
 	},
 };
 
-static struct platform_device apq8064_device_rpm_regulator __devinitdata = {
+static struct platform_device apq8064_device_rpm_regulator = {
 	.name	= "rpm-regulator",
 	.id	= 0,
 	.dev	= {
@@ -2315,7 +2315,7 @@ static struct platform_device apq8064_device_rpm_regulator __devinitdata = {
 };
 
 static struct platform_device
-apq8064_pm8921_device_rpm_regulator __devinitdata = {
+apq8064_pm8921_device_rpm_regulator = {
 	.name	= "rpm-regulator",
 	.id	= 1,
 	.dev	= {
@@ -2497,7 +2497,7 @@ static struct platform_device *cdp_devices[] __initdata = {
 };
 
 static struct platform_device
-mpq8064_device_ext_1p2_buck_vreg __devinitdata = {
+mpq8064_device_ext_1p2_buck_vreg = {
 	.name	= GPIO_REGULATOR_DEV_NAME,
 	.id	= SX150X_GPIO(4, 2),
 	.dev	= {
@@ -2507,7 +2507,7 @@ mpq8064_device_ext_1p2_buck_vreg __devinitdata = {
 };
 
 static struct platform_device
-mpq8064_device_ext_1p8_buck_vreg __devinitdata = {
+mpq8064_device_ext_1p8_buck_vreg = {
 	.name	= GPIO_REGULATOR_DEV_NAME,
 	.id	= SX150X_GPIO(4, 4),
 	.dev	= {
@@ -2517,7 +2517,7 @@ mpq8064_device_ext_1p8_buck_vreg __devinitdata = {
 };
 
 static struct platform_device
-mpq8064_device_ext_2p2_buck_vreg __devinitdata = {
+mpq8064_device_ext_2p2_buck_vreg = {
 	.name	= GPIO_REGULATOR_DEV_NAME,
 	.id	= SX150X_GPIO(4, 14),
 	.dev	= {
@@ -2527,7 +2527,7 @@ mpq8064_device_ext_2p2_buck_vreg __devinitdata = {
 };
 
 static struct platform_device
-mpq8064_device_ext_5v_buck_vreg __devinitdata = {
+mpq8064_device_ext_5v_buck_vreg = {
 	.name	= GPIO_REGULATOR_DEV_NAME,
 	.id	= SX150X_GPIO(4, 3),
 	.dev	= {
@@ -2537,7 +2537,7 @@ mpq8064_device_ext_5v_buck_vreg __devinitdata = {
 };
 
 static struct platform_device
-mpq8064_device_ext_3p3v_ldo_vreg __devinitdata = {
+mpq8064_device_ext_3p3v_ldo_vreg = {
 	.name	= GPIO_REGULATOR_DEV_NAME,
 	.id	= SX150X_GPIO(4, 15),
 	.dev	= {

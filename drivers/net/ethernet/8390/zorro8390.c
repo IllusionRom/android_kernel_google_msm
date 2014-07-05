@@ -75,7 +75,7 @@ static struct card_info {
 	zorro_id id;
 	const char *name;
 	unsigned int offset;
-} cards[] __devinitdata = {
+} cards[] = {
 	{ ZORRO_PROD_VILLAGE_TRONIC_ARIADNE2, "Ariadne II", 0x0600 },
 	{ ZORRO_PROD_INDIVIDUAL_COMPUTERS_X_SURF, "X-Surf", 0x8600 },
 };
@@ -264,7 +264,7 @@ static void __devexit zorro8390_remove_one(struct zorro_dev *z)
 	free_netdev(dev);
 }
 
-static struct zorro_device_id zorro8390_zorro_tbl[] __devinitdata = {
+static struct zorro_device_id zorro8390_zorro_tbl[] = {
 	{ ZORRO_PROD_VILLAGE_TRONIC_ARIADNE2, },
 	{ ZORRO_PROD_INDIVIDUAL_COMPUTERS_X_SURF, },
 	{ 0 }

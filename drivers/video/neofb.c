@@ -88,7 +88,7 @@ static bool external;
 static bool libretto;
 static bool nostretch;
 static bool nopciburst;
-static char *mode_option __devinitdata = NULL;
+static char *mode_option = NULL;
 
 #ifdef MODULE
 
@@ -1632,7 +1632,7 @@ static struct fb_ops neofb_ops = {
 
 /* --------------------------------------------------------------------- */
 
-static struct fb_videomode __devinitdata mode800x480 = {
+static struct fb_videomode mode800x480 = {
 	.xres           = 800,
 	.yres           = 480,
 	.pixclock       = 25000,

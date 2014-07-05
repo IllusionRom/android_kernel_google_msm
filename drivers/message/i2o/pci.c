@@ -37,7 +37,7 @@
 #define OSM_DESCRIPTION	"I2O-subsystem"
 
 /* PCI device id table for all I2O controllers */
-static struct pci_device_id __devinitdata i2o_pci_ids[] = {
+static struct pci_device_id i2o_pci_ids[] = {
 	{PCI_DEVICE_CLASS(PCI_CLASS_INTELLIGENT_I2O << 8, 0xffff00)},
 	{PCI_DEVICE(PCI_VENDOR_ID_DPT, 0xa511)},
 	{.vendor = PCI_VENDOR_ID_INTEL,.device = 0x1962,

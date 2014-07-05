@@ -613,7 +613,7 @@ int __devinit ioc4_ide_attach_one(struct ioc4_driver_data *idd)
 	return pci_init_sgiioc4(idd->idd_pdev);
 }
 
-static struct ioc4_submodule __devinitdata ioc4_ide_submodule = {
+static struct ioc4_submodule ioc4_ide_submodule = {
 	.is_name = "IOC4_ide",
 	.is_owner = THIS_MODULE,
 	.is_probe = ioc4_ide_attach_one,

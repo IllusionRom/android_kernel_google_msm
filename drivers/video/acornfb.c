@@ -66,7 +66,7 @@
  * have.  Allow 1% either way on the nominal for TVs.
  */
 #define NR_MONTYPES	6
-static struct fb_monspecs monspecs[NR_MONTYPES] __devinitdata = {
+static struct fb_monspecs monspecs[NR_MONTYPES] = {
 	{	/* TV		*/
 		.hfmin	= 15469,
 		.hfmax	= 15781,
@@ -874,7 +874,7 @@ static struct fb_ops acornfb_ops = {
 /*
  * Everything after here is initialisation!!!
  */
-static struct fb_videomode modedb[] __devinitdata = {
+static struct fb_videomode modedb[] = {
 	{	/* 320x256 @ 50Hz */
 		NULL, 50,  320,  256, 125000,  92,  62,  35, 19,  38, 2,
 		FB_SYNC_COMP_HIGH_ACT,
@@ -926,7 +926,7 @@ static struct fb_videomode modedb[] __devinitdata = {
 	}
 };
 
-static struct fb_videomode acornfb_default_mode __devinitdata = {
+static struct fb_videomode acornfb_default_mode = {
 	.name =		NULL,
 	.refresh =	60,
 	.xres =		640,
@@ -1131,7 +1131,7 @@ static void __devinit acornfb_parse_dram(char *opt)
 static struct options {
 	char *name;
 	void (*parse)(char *opt);
-} opt_table[] __devinitdata = {
+} opt_table[] = {
 	{ "mon",     acornfb_parse_mon     },
 	{ "montype", acornfb_parse_montype },
 	{ "dram",    acornfb_parse_dram    },

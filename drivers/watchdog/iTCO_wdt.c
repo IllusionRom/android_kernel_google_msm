@@ -134,7 +134,7 @@ enum iTCO_chipsets {
 static struct {
 	char *name;
 	unsigned int iTCO_version;
-} iTCO_chipset_info[] __devinitdata = {
+} iTCO_chipset_info[] = {
 	{"ICH", 1},
 	{"ICH0", 1},
 	{"ICH2", 1},

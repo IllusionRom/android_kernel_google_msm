@@ -455,7 +455,7 @@ static int maya_pb_route_put(struct snd_kcontrol *kcontrol,
  * controls to be added
  */
 
-static struct snd_kcontrol_new maya_controls[] __devinitdata = {
+static struct snd_kcontrol_new maya_controls[] = {
 	{
 		.name = "Crossmix Playback Volume",
 		.iface = SNDRV_CTL_ELEM_IFACE_MIXER,
@@ -693,7 +693,7 @@ static struct snd_pcm_hw_constraint_list dac_rates = {
 /*
  * chip addresses on I2C bus
  */
-static unsigned char wm8776_addr[2] __devinitdata = {
+static unsigned char wm8776_addr[2] = {
 	0x34, 0x36, /* codec 0 & 1 */
 };
 
@@ -743,7 +743,7 @@ static int __devinit maya44_init(struct snd_ice1712 *ice)
  * hence the driver needs to sets up it properly.
  */
 
-static unsigned char maya44_eeprom[] __devinitdata = {
+static unsigned char maya44_eeprom[] = {
 	[ICE_EEP2_SYSCONF]     = 0x45,
 		/* clock xin1=49.152MHz, mpu401, 2 stereo ADCs+DACs */
 	[ICE_EEP2_ACLINK]      = 0x80,
@@ -765,7 +765,7 @@ static unsigned char maya44_eeprom[] __devinitdata = {
 };
 
 /* entry point */
-struct snd_ice1712_card_info snd_vt1724_maya44_cards[] __devinitdata = {
+struct snd_ice1712_card_info snd_vt1724_maya44_cards[] = {
 	{
 		.subvendor = VT1724_SUBDEVICE_MAYA44,
 		.name = "ESI Maya44",

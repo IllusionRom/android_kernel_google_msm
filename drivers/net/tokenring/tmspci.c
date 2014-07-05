@@ -39,7 +39,7 @@
 
 #include "tms380tr.h"
 
-static char version[] __devinitdata =
+static char version[] =
 "tmspci.c: v1.02 23/11/2000 by Adam Fritzler\n";
 
 #define TMS_PCI_IO_EXTENT 32

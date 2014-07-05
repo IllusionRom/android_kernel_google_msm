@@ -403,7 +403,7 @@ static int __devexit mpc5121_rtc_remove(struct platform_device *op)
 	return 0;
 }
 
-static struct of_device_id mpc5121_rtc_match[] __devinitdata = {
+static struct of_device_id mpc5121_rtc_match[] = {
 	{ .compatible = "fsl,mpc5121-rtc", },
 	{ .compatible = "fsl,mpc5200-rtc", },
 	{},

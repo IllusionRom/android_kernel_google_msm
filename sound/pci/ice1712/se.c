@@ -303,7 +303,7 @@ static void se200pci_WM8776_set_agc(struct snd_ice1712 *ice, unsigned int agc)
 static void __devinit se200pci_WM8776_init(struct snd_ice1712 *ice)
 {
 	int i;
-	static unsigned short __devinitdata default_values[] = {
+	static unsigned short default_values[] = {
 		0x100, 0x100, 0x100,
 		0x100, 0x100, 0x100,
 		0x000, 0x090, 0x000, 0x000,
@@ -723,7 +723,7 @@ static int __devinit se_add_controls(struct snd_ice1712 *ice)
 /*  entry point                                                             */
 /****************************************************************************/
 
-static unsigned char se200pci_eeprom[] __devinitdata = {
+static unsigned char se200pci_eeprom[] = {
 	[ICE_EEP2_SYSCONF]	= 0x4b,	/* 49.152Hz, spdif-in/ADC, 4DACs */
 	[ICE_EEP2_ACLINK]	= 0x80,	/* I2S */
 	[ICE_EEP2_I2S]		= 0x78,	/* 96k-ok, 24bit, 192k-ok */
@@ -742,7 +742,7 @@ static unsigned char se200pci_eeprom[] __devinitdata = {
 	[ICE_EEP2_GPIO_STATE2]	= 0x07, /* WM8766 ML/MC/MD */
 };
 
-static unsigned char se90pci_eeprom[] __devinitdata = {
+static unsigned char se90pci_eeprom[] = {
 	[ICE_EEP2_SYSCONF]	= 0x4b,	/* 49.152Hz, spdif-in/ADC, 4DACs */
 	[ICE_EEP2_ACLINK]	= 0x80,	/* I2S */
 	[ICE_EEP2_I2S]		= 0x78,	/* 96k-ok, 24bit, 192k-ok */
@@ -751,7 +751,7 @@ static unsigned char se90pci_eeprom[] __devinitdata = {
 	/* ALL GPIO bits are in input mode */
 };
 
-struct snd_ice1712_card_info snd_vt1724_se_cards[] __devinitdata = {
+struct snd_ice1712_card_info snd_vt1724_se_cards[] = {
 	{
 		.subvendor = VT1724_SUBDEVICE_SE200PCI,
 		.name = "ONKYO SE200PCI",

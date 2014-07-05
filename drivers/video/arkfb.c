@@ -100,7 +100,7 @@ static const struct svga_timing_regs ark_timing_regs     = {
 
 /* Module parameters */
 
-static char *mode_option __devinitdata = "640x480-8@60";
+static char *mode_option = "640x480-8@60";
 
 #ifdef CONFIG_MTRR
 static int mtrr = 1;
@@ -1184,7 +1184,7 @@ fail:
 
 /* List of boards that we are trying to support */
 
-static struct pci_device_id ark_devices[] __devinitdata = {
+static struct pci_device_id ark_devices[] = {
 	{PCI_DEVICE(0xEDD8, 0xA099)},
 	{0, 0, 0, 0, 0, 0, 0}
 };

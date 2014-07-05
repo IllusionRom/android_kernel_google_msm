@@ -517,7 +517,7 @@ Sedl_card_msg(struct IsdnCardState *cs, int mt, void *arg)
 }
 
 #ifdef __ISAPNP__
-static struct isapnp_device_id sedl_ids[] __devinitdata = {
+static struct isapnp_device_id sedl_ids[] = {
 	{ ISAPNP_VENDOR('S', 'A', 'G'), ISAPNP_FUNCTION(0x01),
 	  ISAPNP_VENDOR('S', 'A', 'G'), ISAPNP_FUNCTION(0x01),
 	  (unsigned long) "Speed win" },
@@ -527,8 +527,8 @@ static struct isapnp_device_id sedl_ids[] __devinitdata = {
 	{ 0, }
 };
 
-static struct isapnp_device_id *ipid __devinitdata = &sedl_ids[0];
-static struct pnp_card *pnp_c __devinitdata = NULL;
+static struct isapnp_device_id *ipid = &sedl_ids[0];
+static struct pnp_card *pnp_c = NULL;
 
 static int __devinit
 setup_sedlbauer_isapnp(struct IsdnCard *card, int *bytecnt)
@@ -599,7 +599,7 @@ setup_sedlbauer_isapnp(struct IsdnCard *card, int *bytecnt)
 #endif /* __ISAPNP__ */
 
 #ifdef CONFIG_PCI
-static struct pci_dev *dev_sedl __devinitdata = NULL;
+static struct pci_dev *dev_sedl = NULL;
 
 static int __devinit
 setup_sedlbauer_pci(struct IsdnCard *card)

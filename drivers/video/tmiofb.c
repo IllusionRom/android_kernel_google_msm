@@ -191,7 +191,7 @@
 #define LCR_VCLKHW		0x1b4 /* VCLK High Width		*/
 #define LCR_OC			0x1b6 /* Output Control			*/
 
-static char *mode_option __devinitdata;
+static char *mode_option;
 
 struct tmiofb_par {
 	u32				pseudo_palette[16];

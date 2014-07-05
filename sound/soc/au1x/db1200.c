@@ -167,7 +167,7 @@ static struct snd_soc_card db1550_i2s_machine = {
 
 /*-------------------------  COMMON PART  ---------------------------*/
 
-static struct snd_soc_card *db1200_cards[] __devinitdata = {
+static struct snd_soc_card *db1200_cards[] = {
 	&db1200_ac97_machine,
 	&db1200_i2s_machine,
 	&db1300_ac97_machine,

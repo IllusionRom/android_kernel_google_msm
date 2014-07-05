@@ -384,7 +384,7 @@ static int __devinit en_cs_init_rest(struct IsdnCard *card,
 	return (1);
 }
 
-static struct pci_dev *dev_netjet __devinitdata = NULL;
+static struct pci_dev *dev_netjet = NULL;
 
 /* called by config.c */
 int __devinit

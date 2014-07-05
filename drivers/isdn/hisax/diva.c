@@ -1041,7 +1041,7 @@ static int __devinit setup_diva_isa(struct IsdnCard *card)
 #endif	/* CONFIG_ISA */
 
 #ifdef __ISAPNP__
-static struct isapnp_device_id diva_ids[] __devinitdata = {
+static struct isapnp_device_id diva_ids[] = {
 	{ ISAPNP_VENDOR('G', 'D', 'I'), ISAPNP_FUNCTION(0x51),
 	  ISAPNP_VENDOR('G', 'D', 'I'), ISAPNP_FUNCTION(0x51),
 	  (unsigned long) "Diva picola" },
@@ -1063,8 +1063,8 @@ static struct isapnp_device_id diva_ids[] __devinitdata = {
 	{ 0, }
 };
 
-static struct isapnp_device_id *ipid __devinitdata = &diva_ids[0];
-static struct pnp_card *pnp_c __devinitdata = NULL;
+static struct isapnp_device_id *ipid = &diva_ids[0];
+static struct pnp_card *pnp_c = NULL;
 
 static int __devinit setup_diva_isapnp(struct IsdnCard *card)
 {
@@ -1149,10 +1149,10 @@ static int __devinit setup_diva_isapnp(struct IsdnCard *card)
 #endif	/* ISAPNP */
 
 #ifdef CONFIG_PCI
-static struct pci_dev *dev_diva __devinitdata = NULL;
-static struct pci_dev *dev_diva_u __devinitdata = NULL;
-static struct pci_dev *dev_diva201 __devinitdata = NULL;
-static struct pci_dev *dev_diva202 __devinitdata = NULL;
+static struct pci_dev *dev_diva = NULL;
+static struct pci_dev *dev_diva_u = NULL;
+static struct pci_dev *dev_diva201 = NULL;
+static struct pci_dev *dev_diva202 = NULL;
 
 static int __devinit setup_diva_pci(struct IsdnCard *card)
 {

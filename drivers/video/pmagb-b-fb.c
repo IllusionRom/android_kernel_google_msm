@@ -44,7 +44,7 @@ struct pmagbbfb_par {
 };
 
 
-static struct fb_var_screeninfo pmagbbfb_defined __devinitdata = {
+static struct fb_var_screeninfo pmagbbfb_defined = {
 	.bits_per_pixel	= 8,
 	.red.length	= 8,
 	.green.length	= 8,
@@ -57,7 +57,7 @@ static struct fb_var_screeninfo pmagbbfb_defined __devinitdata = {
 	.vmode		= FB_VMODE_NONINTERLACED,
 };
 
-static struct fb_fix_screeninfo pmagbbfb_fix __devinitdata = {
+static struct fb_fix_screeninfo pmagbbfb_fix = {
 	.id		= "PMAGB-BA",
 	.smem_len	= (2048 * 1024),
 	.type		= FB_TYPE_PACKED_PIXELS,
@@ -181,7 +181,7 @@ static void __devinit pmagbbfb_screen_setup(struct fb_info *info)
  */
 static void __devinit pmagbbfb_osc_setup(struct fb_info *info)
 {
-	static unsigned int pmagbbfb_freqs[] __devinitdata = {
+	static unsigned int pmagbbfb_freqs[] = {
 		130808, 119843, 104000, 92980, 74370, 72800,
 		69197, 66000, 65000, 50350, 36000, 32000, 25175
 	};

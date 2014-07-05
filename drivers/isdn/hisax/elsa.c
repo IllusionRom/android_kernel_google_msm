@@ -902,7 +902,7 @@ setup_elsa_isa(struct IsdnCard *card)
 }
 
 #ifdef __ISAPNP__
-static struct isapnp_device_id elsa_ids[] __devinitdata = {
+static struct isapnp_device_id elsa_ids[] = {
 	{ ISAPNP_VENDOR('E', 'L', 'S'), ISAPNP_FUNCTION(0x0133),
 	  ISAPNP_VENDOR('E', 'L', 'S'), ISAPNP_FUNCTION(0x0133),
 	  (unsigned long) "Elsa QS1000" },
@@ -912,8 +912,8 @@ static struct isapnp_device_id elsa_ids[] __devinitdata = {
 	{ 0, }
 };
 
-static struct isapnp_device_id *ipid __devinitdata = &elsa_ids[0];
-static struct pnp_card *pnp_c __devinitdata = NULL;
+static struct isapnp_device_id *ipid = &elsa_ids[0];
+static struct pnp_card *pnp_c = NULL;
 #endif	/* __ISAPNP__ */
 
 static int __devinit
@@ -1027,8 +1027,8 @@ setup_elsa_pcmcia(struct IsdnCard *card)
 }
 
 #ifdef CONFIG_PCI
-static	struct pci_dev *dev_qs1000 __devinitdata = NULL;
-static	struct pci_dev *dev_qs3000 __devinitdata = NULL;
+static	struct pci_dev *dev_qs1000 = NULL;
+static	struct pci_dev *dev_qs3000 = NULL;
 
 static int __devinit
 setup_elsa_pci(struct IsdnCard *card)

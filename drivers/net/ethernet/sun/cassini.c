@@ -185,7 +185,7 @@
 #define CAS_RESET_SPARE                 3
 #endif
 
-static char version[] __devinitdata =
+static char version[] =
 	DRV_MODULE_NAME ".c:v" DRV_MODULE_VERSION " (" DRV_MODULE_RELDATE ")\n";
 
 static int cassini_debug = -1;	/* -1 == use CAS_DEF_MSG_ENABLE as value */
@@ -222,7 +222,7 @@ static int link_transition_timeout;
 
 
 
-static u16 link_modes[] __devinitdata = {
+static u16 link_modes[] = {
 	BMCR_ANENABLE,			 /* 0 : autoneg */
 	0,				 /* 1 : 10bt half duplex */
 	BMCR_SPEED100,			 /* 2 : 100bt half duplex */

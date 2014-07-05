@@ -786,7 +786,7 @@ static int aaci_resume(struct amba_device *dev)
 #endif
 
 
-static struct ac97_pcm ac97_defs[] __devinitdata = {
+static struct ac97_pcm ac97_defs[] = {
 	[0] = {	/* Front PCM */
 		.exclusive = 1,
 		.r = {

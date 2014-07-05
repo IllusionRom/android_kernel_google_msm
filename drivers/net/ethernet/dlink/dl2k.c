@@ -16,7 +16,7 @@
 #include "dl2k.h"
 #include <linux/dma-mapping.h>
 
-static char version[] __devinitdata =
+static char version[] =
       KERN_INFO DRV_NAME " " DRV_VERSION " " DRV_RELDATE "\n";
 #define MAX_UNITS 8
 static int mtu[MAX_UNITS];

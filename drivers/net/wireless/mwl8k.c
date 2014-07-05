@@ -5234,7 +5234,7 @@ enum {
 #define _MWL8K_8366_AP_FW(api) "mwl8k/fmimage_8366_ap-" #api ".fw"
 #define MWL8K_8366_AP_FW(api) _MWL8K_8366_AP_FW(api)
 
-static struct mwl8k_device_info mwl8k_info_tbl[] __devinitdata = {
+static struct mwl8k_device_info mwl8k_info_tbl[] = {
 	[MWL8363] = {
 		.part_name	= "88w8363",
 		.helper_image	= "mwl8k/helper_8363.fw",

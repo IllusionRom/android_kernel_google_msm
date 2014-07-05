@@ -513,7 +513,7 @@ static int pluto2_request_firmware(struct dvb_frontend *fe,
 	return request_firmware(fw, name, &pluto->pdev->dev);
 }
 
-static struct tda1004x_config pluto2_fe_config __devinitdata = {
+static struct tda1004x_config pluto2_fe_config = {
 	.demod_address = I2C_ADDR_TDA10046 >> 1,
 	.invert = 1,
 	.invert_oclk = 0,
@@ -785,7 +785,7 @@ static void __devexit pluto2_remove(struct pci_dev *pdev)
 #define PCI_DEVICE_ID_PLUTO2	0x0001
 #endif
 
-static struct pci_device_id pluto2_id_table[] __devinitdata = {
+static struct pci_device_id pluto2_id_table[] = {
 	{
 		.vendor = PCI_VENDOR_ID_SCM,
 		.device = PCI_DEVICE_ID_PLUTO2,

@@ -572,7 +572,7 @@ static int __devinit msm_gpio_probe(struct platform_device *pdev)
 }
 
 #ifdef CONFIG_OF
-static struct of_device_id msm_gpio_of_match[] __devinitdata = {
+static struct of_device_id msm_gpio_of_match[] = {
 	{.compatible = "qcom,msm-gpio", },
 	{ },
 };

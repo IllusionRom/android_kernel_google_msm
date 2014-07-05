@@ -372,8 +372,8 @@ struct cirrusfb_info {
 	void (*unmap)(struct fb_info *info);
 };
 
-static bool noaccel __devinitdata;
-static char *mode_option __devinitdata = "640x480@60";
+static bool noaccel;
+static char *mode_option = "640x480@60";
 
 /****************************************************************************/
 /**** BEGIN PROTOTYPES ******************************************************/

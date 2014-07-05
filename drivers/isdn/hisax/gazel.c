@@ -532,7 +532,7 @@ setup_gazelisa(struct IsdnCard *card, struct IsdnCardState *cs)
 }
 
 #ifdef CONFIG_PCI
-static struct pci_dev *dev_tel __devinitdata = NULL;
+static struct pci_dev *dev_tel = NULL;
 
 static int __devinit
 setup_gazelpci(struct IsdnCardState *cs)

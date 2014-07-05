@@ -191,7 +191,7 @@ static struct {
 	u8 trdyto;
 	u8 retryto;
 	u16 gbwc;
-} tx4927_pci_opts __devinitdata = {
+} tx4927_pci_opts = {
 	.trdyto = 0,
 	.retryto = 0,
 	.gbwc = 0xfe0,	/* 4064 GBUSCLK for CCFG.GTOT=0b11 */

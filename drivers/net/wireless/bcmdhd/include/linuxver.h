@@ -171,8 +171,8 @@ typedef irqreturn_t(*FN_ISR) (int irq, void *dev_id, struct pt_regs *ptregs);
 #ifndef __devinit
 #define __devinit	__init
 #endif
-#ifndef __devinitdata
-#define __devinitdata
+#ifndef
+#define
 #endif
 #ifndef __devexit_p
 #define __devexit_p(x)	x

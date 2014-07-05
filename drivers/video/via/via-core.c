@@ -725,7 +725,7 @@ static void __devexit via_pci_remove(struct pci_dev *pdev)
 }
 
 
-static struct pci_device_id via_pci_table[] __devinitdata = {
+static struct pci_device_id via_pci_table[] = {
 	{ PCI_DEVICE(PCI_VENDOR_ID_VIA, UNICHROME_CLE266_DID),
 	  .driver_data = UNICHROME_CLE266 },
 	{ PCI_DEVICE(PCI_VENDOR_ID_VIA, UNICHROME_K400_DID),

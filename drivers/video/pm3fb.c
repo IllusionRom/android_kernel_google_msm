@@ -56,12 +56,12 @@
  * Driver data
  */
 static int hwcursor = 1;
-static char *mode_option __devinitdata;
-static bool noaccel __devinitdata;
+static char *mode_option;
+static bool noaccel;
 
 /* mtrr option */
 #ifdef CONFIG_MTRR
-static bool nomtrr __devinitdata;
+static bool nomtrr;
 #endif
 
 /*
@@ -84,7 +84,7 @@ struct pm3_par {
  * if we don't use modedb. If we do use modedb see pm3fb_init how to use it
  * to get a fb_var_screeninfo. Otherwise define a default var as well.
  */
-static struct fb_fix_screeninfo pm3fb_fix __devinitdata = {
+static struct fb_fix_screeninfo pm3fb_fix = {
 	.id =		"Permedia3",
 	.type =		FB_TYPE_PACKED_PIXELS,
 	.visual =	FB_VISUAL_PSEUDOCOLOR,

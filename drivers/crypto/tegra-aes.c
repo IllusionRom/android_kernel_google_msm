@@ -1073,7 +1073,7 @@ static int __devexit tegra_aes_remove(struct platform_device *pdev)
 	return 0;
 }
 
-static struct of_device_id tegra_aes_of_match[] __devinitdata = {
+static struct of_device_id tegra_aes_of_match[] = {
 	{ .compatible = "nvidia,tegra20-aes", },
 	{ .compatible = "nvidia,tegra30-aes", },
 	{ },

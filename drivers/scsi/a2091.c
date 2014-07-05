@@ -251,7 +251,7 @@ static void __devexit a2091_remove(struct zorro_dev *z)
 	release_mem_region(z->resource.start, 256);
 }
 
-static struct zorro_device_id a2091_zorro_tbl[] __devinitdata = {
+static struct zorro_device_id a2091_zorro_tbl[] = {
 	{ ZORRO_PROD_CBM_A590_A2091_1 },
 	{ ZORRO_PROD_CBM_A590_A2091_2 },
 	{ 0 }

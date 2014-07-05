@@ -335,7 +335,7 @@ static int __devinit tegra_emc_probe(struct platform_device *pdev)
 	return 0;
 }
 
-static struct of_device_id tegra_emc_of_match[] __devinitdata = {
+static struct of_device_id tegra_emc_of_match[] = {
 	{ .compatible = "nvidia,tegra20-emc", },
 	{ },
 };

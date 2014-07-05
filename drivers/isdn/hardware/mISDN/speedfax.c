@@ -488,7 +488,7 @@ sfax_remove_pci(struct pci_dev *pdev)
 		pr_debug("%s: drvdata already removed\n", __func__);
 }
 
-static struct pci_device_id sfaxpci_ids[] __devinitdata = {
+static struct pci_device_id sfaxpci_ids[] = {
 	{ PCI_VENDOR_ID_TIGERJET, PCI_DEVICE_ID_TIGERJET_100,
 	  PCI_SUBVENDOR_SPEEDFAX_PYRAMID, PCI_SUB_ID_SEDLBAUER,
 	  0, 0, (unsigned long) "Pyramid Speedfax + PCI"

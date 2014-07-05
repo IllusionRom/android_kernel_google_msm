@@ -43,7 +43,7 @@ struct mpc5xxx_can_data {
 };
 
 #ifdef CONFIG_PPC_MPC52xx
-static struct of_device_id __devinitdata mpc52xx_cdm_ids[] = {
+static struct of_device_id mpc52xx_cdm_ids[] = {
 	{ .compatible = "fsl,mpc5200-cdm", },
 	{}
 };
@@ -124,7 +124,7 @@ struct mpc512x_clockctl {
 	u32 mccr[4];		/* MSCAN Clk Ctrl Reg 1-3 */
 };
 
-static struct of_device_id __devinitdata mpc512x_clock_ids[] = {
+static struct of_device_id mpc512x_clock_ids[] = {
 	{ .compatible = "fsl,mpc5121-clock", },
 	{}
 };
@@ -380,17 +380,17 @@ static int mpc5xxx_can_resume(struct platform_device *ofdev)
 }
 #endif
 
-static struct mpc5xxx_can_data __devinitdata mpc5200_can_data = {
+static struct mpc5xxx_can_data mpc5200_can_data = {
 	.type = MSCAN_TYPE_MPC5200,
 	.get_clock = mpc52xx_can_get_clock,
 };
 
-static struct mpc5xxx_can_data __devinitdata mpc5121_can_data = {
+static struct mpc5xxx_can_data mpc5121_can_data = {
 	.type = MSCAN_TYPE_MPC5121,
 	.get_clock = mpc512x_can_get_clock,
 };
 
-static struct of_device_id __devinitdata mpc5xxx_can_table[] = {
+static struct of_device_id mpc5xxx_can_table[] = {
 	{ .compatible = "fsl,mpc5200-mscan", .data = &mpc5200_can_data, },
 	/* Note that only MPC5121 Rev. 2 (and later) is supported */
 	{ .compatible = "fsl,mpc5121-mscan", .data = &mpc5121_can_data, },

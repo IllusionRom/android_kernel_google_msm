@@ -338,11 +338,11 @@ static int io[HISAX_MAX_CARDS] = { 0, };
 #define IO0_IO1
 #endif
 #ifdef IO0_IO1
-static int io0[HISAX_MAX_CARDS] __devinitdata = { 0, };
-static int io1[HISAX_MAX_CARDS] __devinitdata = { 0, };
+static int io0[HISAX_MAX_CARDS] = { 0, };
+static int io1[HISAX_MAX_CARDS] = { 0, };
 #endif
-static int irq[HISAX_MAX_CARDS] __devinitdata = { 0, };
-static int mem[HISAX_MAX_CARDS] __devinitdata = { 0, };
+static int irq[HISAX_MAX_CARDS] = { 0, };
+static int mem[HISAX_MAX_CARDS] = { 0, };
 static char *id = HiSaxID;
 
 MODULE_DESCRIPTION("ISDN4Linux: Driver for passive ISDN cards");
@@ -1917,7 +1917,7 @@ static void EChannel_proc_rcv(struct hisax_d_if *d_if)
 #ifdef CONFIG_PCI
 #include <linux/pci.h>
 
-static struct pci_device_id hisax_pci_tbl[] __devinitdata __used = {
+static struct pci_device_id hisax_pci_tbl[] __used = {
 #ifdef CONFIG_HISAX_FRITZPCI
 	{PCI_VDEVICE(AVM,      PCI_DEVICE_ID_AVM_A1)			},
 #endif

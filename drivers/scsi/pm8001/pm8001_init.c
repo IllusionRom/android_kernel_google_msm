@@ -842,7 +842,7 @@ err_out_enable:
 	return rc;
 }
 
-static struct pci_device_id __devinitdata pm8001_pci_table[] = {
+static struct pci_device_id pm8001_pci_table[] = {
 	{
 		PCI_VDEVICE(PMC_Sierra, 0x8001), chip_8001
 	},

@@ -489,7 +489,7 @@ struct ParameterData {
 	int def;		/* default value */
 	int safe;		/* safe value */
 };
-static struct ParameterData __devinitdata cfg_data[] = {
+static struct ParameterData cfg_data[] = {
 	{ /* adapter id */
 		CFG_PARAM_UNSET,
 		0,
@@ -620,7 +620,7 @@ static void __devinit fix_settings(void)
  * Mapping from the eeprom delay index value (index into this array)
  * to the number of actual seconds that the delay should be for.
  */
-static char __devinitdata eeprom_index_to_delay_map[] = 
+static char eeprom_index_to_delay_map[] = 
 	{ 1, 3, 5, 10, 16, 30, 60, 120 };
 
 

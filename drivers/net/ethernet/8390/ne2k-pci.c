@@ -119,7 +119,7 @@ enum ne2k_pci_chipsets {
 static struct {
 	char *name;
 	int flags;
-} pci_clone_list[] __devinitdata = {
+} pci_clone_list[] = {
 	{"RealTek RTL-8029", REALTEK_FDX},
 	{"Winbond 89C940", 0},
 	{"Compex RL2000", 0},

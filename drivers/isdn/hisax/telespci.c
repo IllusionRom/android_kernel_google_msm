@@ -283,7 +283,7 @@ TelesPCI_card_msg(struct IsdnCardState *cs, int mt, void *arg)
 	return (0);
 }
 
-static struct pci_dev *dev_tel __devinitdata = NULL;
+static struct pci_dev *dev_tel = NULL;
 
 int __devinit
 setup_telespci(struct IsdnCard *card)

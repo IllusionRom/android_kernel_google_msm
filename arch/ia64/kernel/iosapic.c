@@ -147,7 +147,7 @@ static struct iosapic_intr_info {
 	unsigned char	trigger	: 1;	/* trigger mode (see iosapic.h) */
 } iosapic_intr_info[NR_IRQS];
 
-static unsigned char pcat_compat __devinitdata;	/* 8259 compatibility flag */
+static unsigned char pcat_compat;	/* 8259 compatibility flag */
 
 static inline void
 iosapic_write(struct iosapic *iosapic, unsigned int reg, u32 val)

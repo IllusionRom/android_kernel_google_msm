@@ -282,21 +282,21 @@ static struct pm8xxx_adc_platform_data pm8038_adc_pdata = {
 	.adc_mpp_base		= PM8038_MPP_PM_TO_SYS(1),
 };
 
-static struct pm8xxx_irq_platform_data pm8xxx_irq_pdata __devinitdata = {
+static struct pm8xxx_irq_platform_data pm8xxx_irq_pdata = {
 	.irq_base		= PM8038_IRQ_BASE,
 	.devirq			= MSM_GPIO_TO_INT(104),
 	.irq_trigger_flag	= IRQF_TRIGGER_LOW,
 };
 
-static struct pm8xxx_gpio_platform_data pm8xxx_gpio_pdata __devinitdata = {
+static struct pm8xxx_gpio_platform_data pm8xxx_gpio_pdata = {
 	.gpio_base	= PM8038_GPIO_PM_TO_SYS(1),
 };
 
-static struct pm8xxx_mpp_platform_data pm8xxx_mpp_pdata __devinitdata = {
+static struct pm8xxx_mpp_platform_data pm8xxx_mpp_pdata = {
 	.mpp_base	= PM8038_MPP_PM_TO_SYS(1),
 };
 
-static struct pm8xxx_rtc_platform_data pm8xxx_rtc_pdata __devinitdata = {
+static struct pm8xxx_rtc_platform_data pm8xxx_rtc_pdata = {
 	.rtc_write_enable	= false,
 	.rtc_alarm_powerup	= false,
 };
@@ -316,7 +316,7 @@ static int pm8921_therm_mitigation[] = {
 
 #define MAX_VOLTAGE_MV		4200
 #define CHG_TERM_MA		100
-static struct pm8921_charger_platform_data pm8921_chg_pdata __devinitdata = {
+static struct pm8921_charger_platform_data pm8921_chg_pdata = {
 	.safety_time		= 180,
 	.update_time		= 60000,
 	.max_voltage		= MAX_VOLTAGE_MV,
@@ -464,7 +464,7 @@ static struct pm8xxx_spk_platform_data pm8xxx_spk_pdata = {
 	.cd_delay		= 0x0,
 };
 
-static struct pm8921_bms_platform_data pm8921_bms_pdata __devinitdata = {
+static struct pm8921_bms_platform_data pm8921_bms_pdata = {
 	.battery_type			= BATT_UNKNOWN,
 	.r_sense			= 10,
 	.v_cutoff			= 3400,
@@ -475,7 +475,7 @@ static struct pm8921_bms_platform_data pm8921_bms_pdata __devinitdata = {
 	.rconn_mohm			= 18,
 };
 
-static struct pm8038_platform_data pm8038_platform_data __devinitdata = {
+static struct pm8038_platform_data pm8038_platform_data = {
 	.irq_pdata		= &pm8xxx_irq_pdata,
 	.gpio_pdata		= &pm8xxx_gpio_pdata,
 	.mpp_pdata		= &pm8xxx_mpp_pdata,
@@ -491,7 +491,7 @@ static struct pm8038_platform_data pm8038_platform_data __devinitdata = {
 	.spk_pdata		= &pm8xxx_spk_pdata,
 };
 
-static struct msm_ssbi_platform_data msm8930_ssbi_pm8038_pdata __devinitdata = {
+static struct msm_ssbi_platform_data msm8930_ssbi_pm8038_pdata = {
 	.controller_type = MSM_SBI_CTRL_PMIC_ARBITER,
 	.slave	= {
 		.name			= "pm8038-core",
@@ -547,7 +547,7 @@ static struct pm8xxx_adc_platform_data pm8917_adc_pdata = {
 	.adc_mpp_base		= PM8917_MPP_PM_TO_SYS(1),
 };
 
-static struct pm8921_platform_data pm8917_platform_data __devinitdata = {
+static struct pm8921_platform_data pm8917_platform_data = {
 	.irq_pdata		= &pm8xxx_irq_pdata,
 	.gpio_pdata		= &pm8xxx_gpio_pdata,
 	.mpp_pdata		= &pm8xxx_mpp_pdata,
@@ -561,7 +561,7 @@ static struct pm8921_platform_data pm8917_platform_data __devinitdata = {
 	.ccadc_pdata		= &pm8xxx_ccadc_pdata,
 };
 
-static struct msm_ssbi_platform_data msm8930_ssbi_pm8917_pdata __devinitdata = {
+static struct msm_ssbi_platform_data msm8930_ssbi_pm8917_pdata = {
 	.controller_type = MSM_SBI_CTRL_PMIC_ARBITER,
 	.slave	= {
 		.name			= "pm8921-core",

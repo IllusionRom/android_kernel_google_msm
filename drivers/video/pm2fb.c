@@ -67,7 +67,7 @@
  * Driver data
  */
 static int hwcursor = 1;
-static char *mode_option __devinitdata;
+static char *mode_option;
 
 /*
  * The XFree GLINT driver will (I think to implement hardware cursor
@@ -80,10 +80,10 @@ static char *mode_option __devinitdata;
  */
 static bool lowhsync;
 static bool lowvsync;
-static bool noaccel __devinitdata;
+static bool noaccel;
 /* mtrr option */
 #ifdef CONFIG_MTRR
-static bool nomtrr __devinitdata;
+static bool nomtrr;
 #endif
 
 /*
@@ -107,7 +107,7 @@ struct pm2fb_par
  * Here we define the default structs fb_fix_screeninfo and fb_var_screeninfo
  * if we don't use modedb.
  */
-static struct fb_fix_screeninfo pm2fb_fix __devinitdata = {
+static struct fb_fix_screeninfo pm2fb_fix = {
 	.id =		"",
 	.type =		FB_TYPE_PACKED_PIXELS,
 	.visual =	FB_VISUAL_PSEUDOCOLOR,
@@ -120,7 +120,7 @@ static struct fb_fix_screeninfo pm2fb_fix __devinitdata = {
 /*
  * Default video mode. In case the modedb doesn't work.
  */
-static struct fb_var_screeninfo pm2fb_var __devinitdata = {
+static struct fb_var_screeninfo pm2fb_var = {
 	/* "640x480, 8 bpp @ 60 Hz */
 	.xres =			640,
 	.yres =			480,
