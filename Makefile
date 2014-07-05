@@ -250,7 +250,7 @@ HOSTCXXFLAGS = -O2
 
 ifeq ($(shell $(HOSTCC) -v 2>&1 | grep -c "clang version"), 1)
 HOSTCFLAGS  += -Wno-unused-value -Wno-unused-parameter \
-               -Wno-missing-field-initializers
+               -Wno-missing-field-initializers -fno-delete-null-pointer-checks
 endif
 
 # Decide whether to build built-in, modular, or both.
@@ -393,7 +393,8 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
-		   $(call cc-option,-no-integrated-as,)
+		   $(call cc-option,-no-integrated-as,) \
+		   $(call cc-option,-fno-delete-null-pointer-checks,)
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__ $(call cc-option,-no-integrated-as,)
@@ -653,9 +654,9 @@ endif
 endif
 
 # We trigger additional mismatches with less inlining
-#ifdef CONFIG_DEBUG_SECTION_MISMATCH
-#KBUILD_CFLAGS += $(call cc-option, -fno-inline-functions-called-once)
-#endif
+ifdef CONFIG_DEBUG_SECTION_MISMATCH
+KBUILD_CFLAGS += $(call cc-option, -fno-inline-functions-called-once)
+endif
 
 # arch Makefile may override CC so keep this after arch Makefile is included
 NOSTDINC_FLAGS += -nostdinc -isystem $(shell $(CC) -print-file-name=include)
@@ -671,7 +672,7 @@ KBUILD_CFLAGS += $(call cc-disable-warning, pointer-sign)
 KBUILD_CFLAGS	+= $(call cc-option,-fno-strict-overflow)
 
 # conserve stack if available
-#KBUILD_CFLAGS   += $(call cc-option,-fconserve-stack)
+KBUILD_CFLAGS   += $(call cc-option,-fconserve-stack)
 
 # use the deterministic mode of AR if available
 KBUILD_ARFLAGS := $(call ar-option,D)

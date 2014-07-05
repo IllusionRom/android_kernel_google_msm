@@ -127,7 +127,7 @@ endif
 
 # Need -Uarm for gcc < 3.x
 ifeq ($(COMPILER),clang)
-KBUILD_CFLAGS  +=$(CFLAGS_ABI) $(CFLAGS_THUMB2) $(arch-y) $(tune-y) -mhard-float
+KBUILD_CFLAGS  +=$(CFLAGS_ABI) $(CFLAGS_THUMB2) $(arch-y) $(tune-y) -msoft-hard
 else
 KBUILD_CFLAGS	+=$(CFLAGS_ABI) $(CFLAGS_THUMB2) $(arch-y) $(tune-y) $(call cc-option,-mshort-load-bytes,$(call cc-option,-malignment-traps,)) -msoft-float -Uarm
 endif
