@@ -10,7 +10,7 @@ SOURCE_DIR="$(pwd)"
 CROSSARCH="arm"
 CROSSCC="$CROSSARCH-linux-gnueabihf-"
 TOOLCHAIN_D="$(pwd)/toolch"
-TOOLCHAIN="/home/hieu/llvmlinux/arch/arm/toolchain/linaro/gcc-linaro-arm-linux-gnueabihf-4.9-2014.06_linux/bin"
+TOOLCHAIN="/home/hieu/github/arm-linux-gnueabihf-4.9/bin"
 #our used directories
 PREBUILT="$(pwd)/prebuilt"
 OUT_DIR="$(pwd)/out"
