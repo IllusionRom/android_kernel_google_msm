@@ -347,7 +347,7 @@ ifneq ($(GCC_TOOLCHAIN),)
 CC		+= -gcc-toolchain $(GCC_TOOLCHAIN)
 endif
 else
-REAL_CC		= $(CROSS_COMPILE)gcc
+CC		= $(CROSS_COMPILE)gcc
 endif
 CPP		= $(CC) -E
 AR		= $(CROSS_COMPILE)ar
