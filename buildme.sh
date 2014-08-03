@@ -8,9 +8,9 @@ USEFTP=0;
 SOURCE_DIR="$(pwd)"
 #crosscompile stuff
 CROSSARCH="arm"
-CROSSCC="$CROSSARCH-eabi-"
+CROSSCC="$CROSSARCH-linux-gnueabihf-"
 TOOLCHAIN_D="$(pwd)/toolch"
-TOOLCHAIN="$(pwd)/toolch/android-toolchain-eabi/bin"
+TOOLCHAIN="/home/hieu/github/arm-linux-gnueabihf-4.9/bin"
 #our used directories
 PREBUILT="$(pwd)/prebuilt"
 OUT_DIR="$(pwd)/out"
@@ -138,7 +138,7 @@ SAVEDPATH=$PATH;
 SAVEDCROSS_COMPILE=$CROSS_COMPILE;
 SAVEDARCH=$ARCH;
 export ARCH=$CROSSARCH
-export CROSS_COMPILE=$CROSSCC
+export CROSS_COMPILE=$TOOLCHAIN/$CROSSCC
 export PATH=$TOOLCHAIN_CCACHE:${PATH}:$TOOLCHAIN
 
 gotoprebuilt() {
