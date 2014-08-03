@@ -205,7 +205,7 @@ gotokcontrolgpu() {
 #end kcontrol necessities
 
 echo "[BUILD]: Bulding the kernel...";
-time make CONFIG_NO_ERROR_ON_MISMATCH=y -j$NRJOBS || { return 1; }
+time make -j$NRJOBS || { return 1; }
 echo "[BUILD]: Done with kernel!...";
 
 # BUILD KCONTROL
