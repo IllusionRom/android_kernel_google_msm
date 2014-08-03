@@ -775,7 +775,7 @@ static int gbam_data_ch_probe(struct platform_device *pdev)
 	pr_debug("%s: name:%s\n", __func__, pdev->name);
 
 	for (i = 0; i < n_bam_ports; i++) {
-		port = bam_ports[i].port;
+		if (i<1) port = bam_ports[i].port;
 		d = &port->data_ch;
 
 		if (!strncmp(bam_ch_names[i], pdev->name,
