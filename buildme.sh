@@ -8,9 +8,9 @@ USEFTP=0;
 SOURCE_DIR="$(pwd)"
 #crosscompile stuff
 CROSSARCH="arm"
-CROSSCC="$CROSSARCH-linux-gnueabihf-"
+CROSSCC="$CROSSARCH-cortex_a15-linux-gnueabihf-"
 TOOLCHAIN_D="$(pwd)/toolch"
-TOOLCHAIN="/home/hieu/github/arm-linux-gnueabihf-4.9/bin"
+TOOLCHAIN="/home/hieu/github/arm-cortex_a15-linux-gnueabihf/bin"
 #our used directories
 PREBUILT="$(pwd)/prebuilt"
 OUT_DIR="$(pwd)/out"
